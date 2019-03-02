@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Piranha;
 using Piranha.AspNetCore.Identity.SQLite;
@@ -10,6 +11,24 @@ namespace MvcWeb
 {
     public class Startup
     {
+        /// <summary>
+        /// The application config.
+        /// </summary>
+        public IConfiguration Configuration { get; set; }
+
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        /// <param name="env">The current hosting environment</param>
+        public Startup(IHostingEnvironment env) {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -18,13 +37,21 @@ namespace MvcWeb
             {
                 config.ModelBinderProviders.Insert(0, new Piranha.Manager.Binders.AbstractModelBinderProvider());
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
             services.AddPiranhaApplication();
             services.AddPiranhaFileStorage();
             services.AddPiranhaImageSharp();
-            services.AddPiranhaEF(options => options.UseSqlite("Filename=./piranha.web.db"));
-            services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options => options.UseSqlite("Filename=./piranha.web.db"));
             services.AddPiranhaManager();
             services.AddPiranhaMemoryCache();
+
+            //
+            // Setup Piranha & Asp.Net Identity for EF SQLite
+            //
+            services.AddPiranhaEF(options =>
+                options.UseSqlite("Filename=./piranha.web.db"));
+            services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options =>
+                options.UseSqlite("Filename=./piranha.web.db"));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
