@@ -1,0 +1,11 @@
+version: 1.0.{build}
+skip_tags: true
+branches:
+  only:
+    - master
+configuration: Debug
+before_build:
+  - cd src
+  - dotnet restore
+build_script:
+  - dotnet build -c Debug /p:DebugType=full
