@@ -5,7 +5,6 @@ branches:
     - master
 configuration: Debug
 before_build:
-  - cd src
   - dotnet restore
 build_script:
   - dotnet build -c Debug /p:DebugType=full
