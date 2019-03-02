@@ -1,0 +1,31 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blog", "Blog", "{6C6AF858-8A2E-42B6-A050-F5D707A287F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{7E5CE0C5-7A78-46DF-8E45-1E4753496D20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBlog", "blog\mvc\MvcBlog.csproj", "{795211DF-8B6E-414B-939B-6F5783CA9D4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcWeb", "web\mvc\MvcWeb.csproj", "{6F973318-DB69-4EFB-BA0E-F9FBCE5AA60A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{795211DF-8B6E-414B-939B-6F5783CA9D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{795211DF-8B6E-414B-939B-6F5783CA9D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{795211DF-8B6E-414B-939B-6F5783CA9D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{795211DF-8B6E-414B-939B-6F5783CA9D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F973318-DB69-4EFB-BA0E-F9FBCE5AA60A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F973318-DB69-4EFB-BA0E-F9FBCE5AA60A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F973318-DB69-4EFB-BA0E-F9FBCE5AA60A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F973318-DB69-4EFB-BA0E-F9FBCE5AA60A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{795211DF-8B6E-414B-939B-6F5783CA9D4E} = {6C6AF858-8A2E-42B6-A050-F5D707A287F1}
+		{6F973318-DB69-4EFB-BA0E-F9FBCE5AA60A} = {7E5CE0C5-7A78-46DF-8E45-1E4753496D20}
+	EndGlobalSection
+EndGlobal
