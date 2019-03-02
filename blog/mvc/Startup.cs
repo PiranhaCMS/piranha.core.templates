@@ -45,12 +45,20 @@ namespace MvcBlog
             services.AddPiranhaMemoryCache();
 
             //
-            // Setup Piranha & Asp.Net Identity for EF SQLite
+            // Setup Piranha & Asp.Net Identity with SQLite
             //
             services.AddPiranhaEF(options =>
                 options.UseSqlite(Configuration.GetConnectionString("piranha")));
             services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("piranha")));
+
+            //
+            // Setup Piranha & Asp.Net Identity with SQL Server
+            //
+            // services.AddPiranhaEF(options =>
+            //     options.UseSqlServer(Configuration.GetConnectionString("piranha")));
+            // services.AddPiranhaIdentityWithSeed<IdentitySQLServerDb>(options =>
+            //     options.UseSqlServer(Configuration.GetConnectionString("piranha")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
