@@ -1,0 +1,12 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Håkan Edling",
+  "classifications": [ "Web", "MVC", "CMS" ],
+  "identity": "Piranha.Enterprise.CSharp",
+  "name": "Enterprise ASP.NET Core Web with Piranha CMS",
+  "tags": {
+    "language": "C#"
+  },
+  "shortName": "piranha.enterprise",
+  "sourceName": "EnterpriseWeb"
+}
