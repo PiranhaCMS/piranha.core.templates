@@ -1,12 +1,12 @@
 ﻿using EnterpriseWeb.Data.Pages;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Piranha;
 using Piranha.AspNetCore.Identity.SQLite;
+using Piranha.Manager.Binders;
 
 namespace EnterpriseWeb.Web
 {
@@ -36,30 +36,29 @@ namespace EnterpriseWeb.Web
         {
             services.AddMvc(config =>
             {
-                config.ModelBinderProviders.Insert(0, new Piranha.Manager.Binders.AbstractModelBinderProvider());
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                config.ModelBinderProviders.Insert(0, new AbstractModelBinderProvider());
+            });
 
             services.AddPiranhaApplication();
             services.AddPiranhaFileStorage();
             services.AddPiranhaImageSharp();
+
             services.AddPiranhaManager();
+
+            services.AddMemoryCache();
             services.AddPiranhaMemoryCache();
 
             //
             // Setup Piranha & Asp.Net Identity with SQLite
             //
-            services.AddPiranhaEF(options =>
-                options.UseSqlite(Configuration.GetConnectionString("piranha")));
-            services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("piranha")));
+            services.AddPiranhaEF(options => options.UseSqlite(Configuration.GetConnectionString("piranha")));
+            services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options =>options.UseSqlite(Configuration.GetConnectionString("piranha")));
 
             //
             // Setup Piranha & Asp.Net Identity with SQL Server
             //
-            // services.AddPiranhaEF(options =>
-            //     options.UseSqlServer(Configuration.GetConnectionString("piranha")));
-            // services.AddPiranhaIdentityWithSeed<IdentitySQLServerDb>(options =>
-            //     options.UseSqlServer(Configuration.GetConnectionString("piranha")));
+            // services.AddPiranhaEF(options => options.UseSqlServer(Configuration.GetConnectionString("piranha")));
+            // services.AddPiranhaIdentityWithSeed<IdentitySQLServerDb>(options => options.UseSqlServer(Configuration.GetConnectionString("piranha")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,7 +70,7 @@ namespace EnterpriseWeb.Web
             }
 
             // Initialize Piranha
-            App.Init();
+            App.Init(api);
 
             // Configure cache level
             App.CacheLevel = Piranha.Cache.CacheLevel.Basic;
@@ -96,6 +95,7 @@ namespace EnterpriseWeb.Web
             app.UseAuthentication();
             app.UsePiranha();
             app.UsePiranhaManager();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(name: "areaRoute",

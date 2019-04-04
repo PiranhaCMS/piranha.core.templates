@@ -17,10 +17,10 @@
                 }
             </div>
         </div>
-        @if (Model.Heading.PrimaryImage.HasValue) {
+        @if (Model.Hero.PrimaryImage.HasValue) {
             <div class="row">
                 <div class="col-sm post-header">
-                    <img class="img-fluid" src="@Url.Content(Model.Heading.PrimaryImage.Resize(Api, 1100, 400))">
+                    <img class="img-fluid" src="@Url.Content(Model.Hero.PrimaryImage.Resize(Api, 1100, 400))">
                 </div>
             </div>
         }

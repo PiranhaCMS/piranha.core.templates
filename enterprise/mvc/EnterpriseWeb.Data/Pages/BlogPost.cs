@@ -9,9 +9,9 @@ namespace EnterpriseWeb.Data.Pages
     public class BlogPost  : Post<BlogPost>
     {
         /// <summary>
-        /// Gets/sets the post heading.
+        /// Gets/sets the hero region.
         /// </summary>
         [Region]
-        public HeadingRegion Heading { get; set; }
+        public HeroRegion Hero { get; set; }
     }
 }

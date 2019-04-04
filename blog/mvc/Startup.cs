@@ -47,10 +47,8 @@ namespace MvcBlog
             //
             // Setup Piranha & Asp.Net Identity with SQLite
             //
-            services.AddPiranhaEF(options =>
-                options.UseSqlite(Configuration.GetConnectionString("piranha")));
-            services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("piranha")));
+            services.AddPiranhaEF(options => options.UseSqlite(Configuration.GetConnectionString("piranha")));
+            services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options => options.UseSqlite(Configuration.GetConnectionString("piranha")));
 
             //
             // Setup Piranha & Asp.Net Identity with SQL Server
@@ -70,7 +68,7 @@ namespace MvcBlog
             }
 
             // Initialize Piranha
-            App.Init();
+            App.Init(api);
 
             // Configure cache level
             App.CacheLevel = Piranha.Cache.CacheLevel.Basic;

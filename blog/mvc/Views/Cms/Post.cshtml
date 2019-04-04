@@ -7,11 +7,11 @@
 <div class="container">
     <article>
         <header>
-            @if (Model.Heading.PrimaryImage.HasValue)
+            @if (Model.Hero.PrimaryImage.HasValue)
             {
                 <div class="row justify-content-center">
                     <div class="col-sm">
-                        <img src="@Url.Content(Model.Heading.PrimaryImage.Resize(Api, 930, 360))">
+                        <img src="@Url.Content(Model.Hero.PrimaryImage.Resize(Api, 930, 360))">
                     </div>
                 </div>
             }

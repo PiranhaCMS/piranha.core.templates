@@ -1,5 +1,5 @@
-@{
-    var site = WebApp.Site.GetContent<MvcBlog.Models.BlogSite>();
+﻿@{
+    var site = await WebApp.Site.GetContentAsync<MvcBlog.Models.BlogSite>();
 }
 <!doctype html>
 <html lang="en">

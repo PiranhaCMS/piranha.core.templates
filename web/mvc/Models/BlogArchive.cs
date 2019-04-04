@@ -8,9 +8,9 @@ namespace MvcWeb.Models
     public class BlogArchive  : ArchivePage<BlogArchive>
     {
         /// <summary>
-        /// Gets/sets the archive heading.
+        /// Gets/sets the archive hero.
         /// </summary>
         [Region]
-        public Heading Heading { get; set; }
+        public Hero Hero { get; set; }
     }
 }

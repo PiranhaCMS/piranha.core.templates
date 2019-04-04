@@ -3,7 +3,7 @@ using Piranha.Extend.Fields;
 
 namespace MvcBlog.Models.Regions
 {
-    public class Heading
+    public class Hero
     {
         [Field(Title = "Primary image")]
         public ImageField PrimaryImage { get; set; }

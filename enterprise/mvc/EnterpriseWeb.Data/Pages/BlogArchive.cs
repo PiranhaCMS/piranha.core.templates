@@ -9,9 +9,9 @@ namespace EnterpriseWeb.Data.Pages
     public class BlogArchive  : ArchivePage<BlogArchive>
     {
         /// <summary>
-        /// Gets/sets the archive heading.
+        /// Gets/sets the page header.
         /// </summary>
         [Region]
-        public HeadingRegion Heading { get; set; }
+        public HeroRegion Hero { get; set; }
     }
 }
