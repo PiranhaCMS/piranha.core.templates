@@ -5,11 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Piranha.AttributeBuilder" Version="5.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Blocks\" />
+    <PackageReference Include="Piranha.AttributeBuilder" Version="6.0.0" />
   </ItemGroup>
 
 </Project>

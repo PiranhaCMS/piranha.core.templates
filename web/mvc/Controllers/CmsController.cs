@@ -2,19 +2,21 @@
 using Microsoft.AspNetCore.Mvc;
 using Piranha;
 using System;
+using System.Threading.Tasks;
 
 namespace MvcWeb.Controllers
 {
     public class CmsController : Controller
     {
-        private readonly IApi api;
+        private readonly IApi _api;
 
         /// <summary>
         /// Default constructor.
         /// </summary>
         /// <param name="api">The current api</param>
-        public CmsController(IApi api) {
-            this.api = api;
+        public CmsController(IApi api)
+        {
+            _api = api;
         }
 
         /// <summary>
@@ -27,16 +29,12 @@ namespace MvcWeb.Controllers
         /// <param name="category">The optional category</param>
         /// <param name="tag">The optional tag</param>
         [Route("archive")]
-        public IActionResult Archive(Guid id, int? year = null, int? month = null, int? page = null, 
-            Guid? category = null, Guid? tag = null) 
+        public async Task<IActionResult> Archive(Guid id, int? year = null, int? month = null, int? page = null,
+            Guid? category = null, Guid? tag = null)
         {
-            BlogArchive model;
+            var model = await _api.Pages.GetByIdAsync<BlogArchive>(id);
 
-            if (category.HasValue)
-                model = api.Archives.GetByCategoryId<BlogArchive>(id, category.Value, page, year, month);
-            else if (tag.HasValue)
-                model = api.Archives.GetByTagId<BlogArchive>(id, tag.Value, page, year, month);
-            else model = api.Archives.GetById<BlogArchive>(id, page, year, month);
+            model.Archive = await _api.Archives.GetByIdAsync(id, page, category, tag, year, month);
 
             return View(model);
         }
@@ -46,8 +44,9 @@ namespace MvcWeb.Controllers
         /// </summary>
         /// <param name="id">The unique page id</param>
         [Route("page")]
-        public IActionResult Page(Guid id) {
-            var model = api.Pages.GetById<StandardPage>(id);
+        public async Task<IActionResult> Page(Guid id)
+        {
+            var model = await _api.Pages.GetByIdAsync<StandardPage>(id);
 
             return View(model);
         }
@@ -57,8 +56,9 @@ namespace MvcWeb.Controllers
         /// </summary>
         /// <param name="id">The unique post id</param>
         [Route("post")]
-        public IActionResult Post(Guid id) {
-            var model = api.Posts.GetById<BlogPost>(id);
+        public async Task<IActionResult> Post(Guid id)
+        {
+            var model = await _api.Posts.GetByIdAsync<BlogPost>(id);
 
             return View(model);
         }
@@ -68,8 +68,9 @@ namespace MvcWeb.Controllers
         /// </summary>
         /// <param name="id">The unique page id</param>
         [Route("start")]
-        public IActionResult Start(Guid id) {
-            var model = api.Pages.GetById<StartPage>(id);
+        public async Task<IActionResult> Start(Guid id)
+        {
+            var model = await _api.Pages.GetByIdAsync<StartPage>(id);
 
             return View(model);
         }

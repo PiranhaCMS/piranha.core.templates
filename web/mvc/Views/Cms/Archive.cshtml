@@ -2,11 +2,11 @@
 
 @{
     ViewBag.Title = Model.Title;
-    ViewBag.HasImage = Model.Heading.PrimaryImage.HasValue;
+    ViewBag.HasImage = Model.Hero.PrimaryImage.HasValue;
 
     string PrimaryImage() {
-        if (Model.Heading.PrimaryImage.HasValue) {
-            return $"style=background-image:url({Url.Content(Model.Heading.PrimaryImage)})";
+        if (Model.Hero.PrimaryImage.HasValue) {
+            return $"style=background-image:url({Url.Content(Model.Hero.PrimaryImage)})";
         } 
         return "";
     }
@@ -22,7 +22,7 @@
                     <h1>@Model.Archive.Category.Title</h1>
                 }
                 <p class="lead">
-                    @Html.Raw(Model.Heading.Ingress)
+                    @Html.Raw(Model.Hero.Ingress)
                 </p>
             </div>
         </div>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-sm-9">
                     <p>
-                        @post.Regions.Heading.Ingress.Value 
+                        @post.Regions.Hero.Ingress.Value 
                     </p>
                     <p><a href="@post.Permalink">Read more...</a></p>
                 </div>

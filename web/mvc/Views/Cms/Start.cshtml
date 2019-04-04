@@ -3,11 +3,11 @@
 
 @{
     ViewBag.Title = Model.Title;
-    ViewBag.HasImage = Model.Heading.PrimaryImage.HasValue;
+    ViewBag.HasImage = Model.Hero.PrimaryImage.HasValue;
 
     string PrimaryImage() {
-        if (Model.Heading.PrimaryImage.HasValue) {
-            return $"style=background-image:url({Url.Content(Model.Heading.PrimaryImage)})";
+        if (Model.Hero.PrimaryImage.HasValue) {
+            return $"style=background-image:url({Url.Content(Model.Hero.PrimaryImage)})";
         }
         return "";
     }
@@ -19,7 +19,7 @@
             <div class="col-sm-9">
                 <h1>@Model.Title</h1>
                 <p class="lead">
-                    @Html.Raw(Model.Heading.Ingress)
+                    @Html.Raw(Model.Hero.Ingress)
                 </p>
             </div>
         </div>

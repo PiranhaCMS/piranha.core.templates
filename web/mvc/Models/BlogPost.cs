@@ -8,9 +8,9 @@ namespace MvcWeb.Models
     public class BlogPost  : Post<BlogPost>
     {
         /// <summary>
-        /// Gets/sets the post heading.
+        /// Gets/sets the post hero.
         /// </summary>
         [Region]
-        public Heading Heading { get; set; }
+        public Hero Hero { get; set; }
     }
 }

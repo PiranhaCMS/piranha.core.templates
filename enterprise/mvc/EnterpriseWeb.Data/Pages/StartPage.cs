@@ -10,10 +10,10 @@ namespace EnterpriseWeb.Data.Pages
     public class StartPage : Page<StartPage>
     {
         /// <summary>
-        /// Gets/sets the page heading.
+        /// Gets/sets the page hero.
         /// </summary>
         [Region]
-        public HeadingRegion Heading { get; set; }
+        public HeroRegion Hero { get; set; }
 
         /// <summary>
         /// Gets/sets the available teasers.

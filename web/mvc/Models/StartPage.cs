@@ -10,10 +10,10 @@ namespace MvcWeb.Models
     public class StartPage : Page<StartPage>
     {
         /// <summary>
-        /// Gets/sets the page heading.
+        /// Gets/sets the page hero.
         /// </summary>
         [Region]
-        public Heading Heading { get; set; }
+        public Hero Hero { get; set; }
 
         /// <summary>
         /// Gets/sets the available teasers.

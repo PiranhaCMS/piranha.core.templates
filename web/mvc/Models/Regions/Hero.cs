@@ -3,7 +3,7 @@ using Piranha.Extend.Fields;
 
 namespace MvcWeb.Models.Regions
 {
-    public class Heading
+    public class Hero
     {
         /// <summary>
         /// Gets/sets the optional primary image.
