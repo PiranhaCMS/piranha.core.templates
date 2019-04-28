@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MvcBlog.Models;
-using Piranha;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Piranha;
+using MvcBlog.Models;
 
 namespace MvcBlog.Controllers
 {
@@ -14,7 +14,7 @@ namespace MvcBlog.Controllers
         /// Default constructor.
         /// </summary>
         /// <param name="api">The current api</param>
-        public CmsController(IApi api) 
+        public CmsController(IApi api)
         {
             _api = api;
         }
@@ -29,11 +29,10 @@ namespace MvcBlog.Controllers
         /// <param name="category">The optional category</param>
         /// <param name="tag">The optional tag</param>
         [Route("archive")]
-        public async Task<IActionResult> Archive(Guid id, int? year = null, int? month = null, int? page = null, 
+        public async Task<IActionResult> Archive(Guid id, int? year = null, int? month = null, int? page = null,
             Guid? category = null, Guid? tag = null)
         {
             var model = await _api.Pages.GetByIdAsync<BlogArchive>(id);
-
             model.Archive = await _api.Archives.GetByIdAsync(id, page, category, tag, year, month);
 
             return View(model);
@@ -46,7 +45,7 @@ namespace MvcBlog.Controllers
         [Route("page")]
         public async Task<IActionResult> Page(Guid id)
         {
-            var model = await _api.Pages.GetByIdAsync<Models.StandardPage>(id);
+            var model = await _api.Pages.GetByIdAsync<StandardPage>(id);
 
             return View(model);
         }
@@ -58,7 +57,7 @@ namespace MvcBlog.Controllers
         [Route("pagewide")]
         public async Task<IActionResult> PageWide(Guid id)
         {
-            var model = await _api.Pages.GetByIdAsync<Models.StandardPage>(id);
+            var model = await _api.Pages.GetByIdAsync<StandardPage>(id);
 
             return View(model);
         }
@@ -71,7 +70,7 @@ namespace MvcBlog.Controllers
         [Route("post")]
         public async Task<IActionResult> Post(Guid id)
         {
-            var model = await _api.Posts.GetByIdAsync<Models.BlogPost>(id);
+            var model = await _api.Posts.GetByIdAsync<BlogPost>(id);
 
             return View(model);
         }

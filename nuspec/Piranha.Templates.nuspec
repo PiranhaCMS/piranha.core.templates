@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Piranha.Templates</id>
+    <version>6.0.2</version>
+    <title>Piranha CMS Templates</title>
+    <authors>Håkan Edling</authors>
+    <owners>Håkan Edling</owners>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+    <license type="expression">MIT</license>
+    <projectUrl>http://github.com/piranhacms/piranha.core.templates</projectUrl>
+    <iconUrl>http://piranhacms.org/assets/twitter-shield.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Piranha CMS Templates</description>
+    <releaseNotes>
+      See the changelog available at:
+      https://github.com/piranhacms/piranha.core/wiki/changelog
+    </releaseNotes>
+    <copyright>Copyright 2018-2019 (c) Håkan Edling</copyright>
+    <tags>cms mvc aspnetcore netstandard</tags>
+  </metadata>
+  <files>
+    <file src="..\blog\mvc\wwwroot\" target="content\blog\wwwroot\" />
+    <file src="..\blog\mvc\.template.config\template.json" target="content\blog\.template.config\template.json" />
+    <file src="..\blog\mvc\assets\scss\*.*" target="content\blog\assets\scss" />
+    <file src="..\blog\mvc\Controllers\*.*" target="content\blog\Controllers" />
+    <file src="..\blog\mvc\Models\**\*.*" target="content\blog\Models" />
+    <file src="..\blog\mvc\seed\*.*" target="content\blog\seed" />
+    <file src="..\blog\mvc\Views\*.*" target="content\blog\Views" />
+    <file src="..\blog\mvc\Views\Cms\**\*.*" target="content\blog\Views\Cms" />
+    <file src="..\blog\mvc\Views\Setup\*.*" target="content\blog\Views\Setup" />
+    <file src="..\blog\mvc\Views\Shared\**\*.*" target="content\blog\Views\Shared" />
+    <file src="..\blog\mvc\wwwroot\assets\**\*.*" target="content\blog\wwwroot\assets" />
+    <file src="..\blog\mvc\MvcBlog.csproj" target="content\blog\MvcBlog.csproj" />
+    <file src="..\blog\mvc\appsettings.json" target="content\blog\appsettings.json" />
+    <file src="..\blog\mvc\compilerconfig.json" target="content\blog\compilerconfig.json" />
+    <file src="..\blog\mvc\compilerconfig.json.defaults" target="content\blog\compilerconfig.json.defaults" />
+    <file src="..\blog\mvc\gulpfile.js" target="content\blog\gulpfile.js" />
+    <file src="..\blog\mvc\package.json" target="content\blog\package.json" />
+    <file src="..\blog\mvc\Program.cs" target="content\blog\Program.cs" />
+    <file src="..\blog\mvc\Startup.cs" target="content\blog\Startup.cs" />
+
+    <file src="..\web\mvc\wwwroot\" target="content\web\wwwroot\" />
+    <file src="..\web\mvc\.template.config\template.json" target="content\web\.template.config\template.json" />
+    <file src="..\web\mvc\assets\scss\*.*" target="content\web\assets\scss" />
+    <file src="..\web\mvc\Controllers\*.*" target="content\web\Controllers" />
+    <file src="..\web\mvc\Models\**\*.*" target="content\web\Models" />
+    <file src="..\web\mvc\seed\*.*" target="content\web\seed" />
+    <file src="..\web\mvc\Views\Cms\**\*.*" target="content\web\Views\Cms" />
+    <file src="..\web\mvc\Views\Setup\*.*" target="content\web\Views\Setup" />
+    <file src="..\web\mvc\Views\Shared\**\*.*" target="content\web\Views\Shared" />
+    <file src="..\web\mvc\Views\*.*" target="content\web\Views" />
+    <file src="..\web\mvc\wwwroot\css\*.*" target="content\web\wwwroot\css" />
+    <file src="..\web\mvc\MvcWeb.csproj" target="content\web\MvcWeb.csproj" />
+    <file src="..\web\mvc\appsettings.json" target="content\web\appsettings.json" />
+    <file src="..\web\mvc\compilerconfig.json" target="content\web\compilerconfig.json" />
+    <file src="..\web\mvc\compilerconfig.json.defaults" target="content\web\compilerconfig.json.defaults" />
+    <file src="..\web\mvc\gulpfile.js" target="content\web\gulpfile.js" />
+    <file src="..\web\mvc\package.json" target="content\web\package.json" />
+    <file src="..\web\mvc\Program.cs" target="content\web\Program.cs" />
+    <file src="..\web\mvc\Startup.cs" target="content\web\Startup.cs" />
+  </files>
+</package>

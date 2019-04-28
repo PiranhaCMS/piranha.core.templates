@@ -38,6 +38,7 @@ namespace MvcBlog
                 config.ModelBinderProviders.Insert(0, new Piranha.Manager.Binders.AbstractModelBinderProvider());
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services.AddPiranha();
             services.AddPiranhaApplication();
             services.AddPiranhaFileStorage();
             services.AddPiranhaImageSharp();
@@ -47,8 +48,10 @@ namespace MvcBlog
             //
             // Setup Piranha & Asp.Net Identity with SQLite
             //
-            services.AddPiranhaEF(options => options.UseSqlite(Configuration.GetConnectionString("piranha")));
-            services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options => options.UseSqlite(Configuration.GetConnectionString("piranha")));
+            services.AddPiranhaEF(options =>
+                options.UseSqlite(Configuration.GetConnectionString("piranha")));
+            services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("piranha")));
 
             //
             // Setup Piranha & Asp.Net Identity with SQL Server

@@ -1,8 +1,9 @@
+using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Piranha;
 using Piranha.Extend.Blocks;
-using System;
-using System.Threading.Tasks;
+using MvcBlog.Models;
 
 namespace MvcBlog.Controllers
 {
@@ -30,7 +31,7 @@ namespace MvcBlog.Controllers
         {
             // Get the default site
             var site = await _api.Sites.GetDefaultAsync();
-            site.SiteTypeId = nameof(Models.BlogSite);
+            site.SiteTypeId = nameof(BlogSite);
             await _api.Sites.SaveAsync(site);
 
             // Add media assets
@@ -58,7 +59,7 @@ namespace MvcBlog.Controllers
             }
 
             // Add the site info
-            var blogSite = Models.BlogSite.Create(_api);
+            var blogSite = BlogSite.Create(_api);
             blogSite.Information.SiteLogo = logoId;
             blogSite.Information.SiteTitle = "Piranha CMS";
             blogSite.Information.Tagline = "A lightweight & unobtrusive CMS for Asp.NET Core.";
@@ -66,7 +67,7 @@ namespace MvcBlog.Controllers
 
             // Add the blog archive
             var blogId = Guid.NewGuid();
-            var blogPage = Models.BlogArchive.Create(_api);
+            var blogPage = BlogArchive.Create(_api);
             blogPage.Id = blogId;
             blogPage.SiteId = site.Id;
             blogPage.Title = "Blog Archive";
@@ -78,7 +79,7 @@ namespace MvcBlog.Controllers
             await _api.Pages.SaveAsync(blogPage);
 
             // Add a blog post
-            var post = Models.BlogPost.Create(_api);
+            var post = BlogPost.Create(_api);
             post.BlogId = blogPage.Id;
             post.Category = "Piranha CMS";
             post.Tags.Add("Welcome", "Fresh Start", "Information");
@@ -103,7 +104,7 @@ namespace MvcBlog.Controllers
             await _api.Posts.SaveAsync(post);
 
             // Add about page
-            var page = Models.StandardPage.Create(_api);
+            var page = StandardPage.Create(_api);
             page.SiteId = site.Id;
             page.SortOrder = 1;
             page.Title = "About Me";
