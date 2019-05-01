@@ -94,7 +94,7 @@ namespace MvcBlog.Controllers
             });
             post.Blocks.Add(new HtmlBlock
             {
-                Body = "<h2>Getting Started</h2><p>To log into the manager interface and start writing content simply go the URL <code>/manager</code> and login with <code>user</code> / <code>password</code> as your username and password.</p>"
+                Body = "<h2>Getting Started</h2><p>To log into the manager interface and start writing content simply go the URL <code>/manager</code> and login with <code>admin</code> / <code>password</code> as your username and password.</p>"
             });
             post.Blocks.Add(new HtmlBlock
             {
