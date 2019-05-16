@@ -16,6 +16,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnterpriseWeb.Web", "enterp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnterpriseWeb.Data", "enterprise\mvc\EnterpriseWeb.Data\EnterpriseWeb.Data.csproj", "{7F14F4E5-840B-4712-BF5A-7D15560FF0DC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Empty", "Empty", "{365B6528-3371-458D-BAC7-3C3A43F6E7BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebEmpty", "empty\web\WebEmpty.csproj", "{75764B1F-6002-4B1D-A3A3-AEE89C5CE0CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,10 @@ Global
 		{7F14F4E5-840B-4712-BF5A-7D15560FF0DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F14F4E5-840B-4712-BF5A-7D15560FF0DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F14F4E5-840B-4712-BF5A-7D15560FF0DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75764B1F-6002-4B1D-A3A3-AEE89C5CE0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75764B1F-6002-4B1D-A3A3-AEE89C5CE0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75764B1F-6002-4B1D-A3A3-AEE89C5CE0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75764B1F-6002-4B1D-A3A3-AEE89C5CE0CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +55,7 @@ Global
 		{6F973318-DB69-4EFB-BA0E-F9FBCE5AA60A} = {7E5CE0C5-7A78-46DF-8E45-1E4753496D20}
 		{9DBDE8B6-85B4-411C-B2C3-16B05EFF34C3} = {E79E4273-64E1-4AAD-83ED-DED9E29A0610}
 		{7F14F4E5-840B-4712-BF5A-7D15560FF0DC} = {E79E4273-64E1-4AAD-83ED-DED9E29A0610}
+		{75764B1F-6002-4B1D-A3A3-AEE89C5CE0CA} = {365B6528-3371-458D-BAC7-3C3A43F6E7BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71FDC6CF-2B24-4FDA-BDB9-B81541017576}
