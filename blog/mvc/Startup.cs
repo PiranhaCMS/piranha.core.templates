@@ -19,14 +19,9 @@ namespace MvcBlog
         /// <summary>
         /// Default constructor.
         /// </summary>
-        /// <param name="env">The current hosting environment</param>
-        public Startup(IHostingEnvironment env) {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
-            Configuration = builder.Build();
+        /// <param name="configuration">The current configuration</param>
+        public Startup(IConfiguration configuration) {
+            Configuration = configuration;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.

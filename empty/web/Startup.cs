@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Piranha;
 using Piranha.AspNetCore.Identity.SQLite;
 
-namespace MvcWeb
+namespace WebEmpty
 {
     public class Startup
     {
@@ -70,18 +70,6 @@ namespace MvcWeb
 
             // Configure cache level
             App.CacheLevel = Piranha.Cache.CacheLevel.Basic;
-
-            // Build content types
-            var pageTypeBuilder = new Piranha.AttributeBuilder.PageTypeBuilder(api)
-                .AddType(typeof(Models.BlogArchive))
-                .AddType(typeof(Models.StandardPage))
-                .AddType(typeof(Models.StartPage));
-            pageTypeBuilder.Build()
-                .DeleteOrphans();
-            var postTypeBuilder = new Piranha.AttributeBuilder.PostTypeBuilder(api)
-                .AddType(typeof(Models.BlogPost));
-            postTypeBuilder.Build()
-                .DeleteOrphans();
 
             // Register middleware
             app.UseStaticFiles();
