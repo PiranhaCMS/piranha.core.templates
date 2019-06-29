@@ -1,12 +1,13 @@
 ﻿using EnterpriseWeb.Data.Pages;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 using Piranha;
 using Piranha.AspNetCore.Identity.SQLite;
-using Piranha.Manager.Binders;
 
 namespace EnterpriseWeb.Web
 {
@@ -34,10 +35,18 @@ namespace EnterpriseWeb.Web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(config =>
-            {
-                config.ModelBinderProviders.Insert(0, new AbstractModelBinderProvider());
-            });
+            services.AddMvc()
+                .AddRazorPagesOptions(options => {
+                    options.Conventions.AuthorizeAreaFolder("Manager", "/");
+                    options.Conventions.AllowAnonymousToAreaPage("Manager", "/login");
+                })
+                .AddViewLocalization()
+                .AddDataAnnotationsLocalization()
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.TypeNameHandling = TypeNameHandling.Auto;
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddPiranhaApplication();
             services.AddPiranhaFileStorage();

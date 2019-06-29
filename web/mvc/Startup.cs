@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 using Piranha;
 using Piranha.AspNetCore.Identity.SQLite;
 
@@ -28,10 +29,18 @@ namespace MvcWeb
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(config =>
-            {
-                config.ModelBinderProviders.Insert(0, new Piranha.Manager.Binders.AbstractModelBinderProvider());
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .AddRazorPagesOptions(options => {
+                    options.Conventions.AuthorizeAreaFolder("Manager", "/");
+                    options.Conventions.AllowAnonymousToAreaPage("Manager", "/login");
+                })
+                .AddViewLocalization()
+                .AddDataAnnotationsLocalization()
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.TypeNameHandling = TypeNameHandling.Auto;
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddPiranha();
             services.AddPiranhaApplication();
