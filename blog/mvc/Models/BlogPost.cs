@@ -9,7 +9,7 @@ namespace MvcBlog.Models
         /// <summary>
         /// Gets/sets the hero.
         /// </summary>
-        [Region]
+        [Region(Display = RegionDisplayMode.Setting)]
         public Regions.Hero Hero { get; set; }
     }
 }

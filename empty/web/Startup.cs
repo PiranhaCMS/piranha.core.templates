@@ -28,10 +28,12 @@ namespace WebEmpty
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(config =>
-            {
-                config.ModelBinderProviders.Insert(0, new Piranha.Manager.Binders.AbstractModelBinderProvider());
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddLocalization(options =>
+                options.ResourcesPath = "Resources"
+            );
+            services.AddMvc()
+                .AddPiranhaManagerOptions()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddPiranha();
             services.AddPiranhaApplication();
