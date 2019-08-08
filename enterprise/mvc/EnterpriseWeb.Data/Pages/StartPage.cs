@@ -12,7 +12,7 @@ namespace EnterpriseWeb.Data.Pages
         /// <summary>
         /// Gets/sets the page hero.
         /// </summary>
-        [Region]
+        [Region(Display = RegionDisplayMode.Setting)]
         public HeroRegion Hero { get; set; }
 
         /// <summary>

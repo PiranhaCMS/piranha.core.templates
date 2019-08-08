@@ -11,7 +11,7 @@ namespace EnterpriseWeb.Data.Pages
         /// <summary>
         /// Gets/sets the hero region.
         /// </summary>
-        [Region]
+        [Region(Display = RegionDisplayMode.Setting)]
         public HeroRegion Hero { get; set; }
     }
 }
