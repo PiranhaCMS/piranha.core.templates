@@ -1,0 +1,12 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Håkan Edling",
+  "classifications": [ "Web", "Razor", "CMS" ],
+  "identity": "Piranha.Blog.Razor.CSharp",
+  "name": "ASP.NET Core Blog with Piranha CMS",
+  "tags": {
+    "language": "C#"
+  },
+  "shortName": "piranha.blog.razor",
+  "sourceName": "RazorBlog"
+}
