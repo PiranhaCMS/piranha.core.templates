@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Piranha;
 using Piranha.AspNetCore.Identity.SQLite;
+using Piranha.Manager.Editor;
 
 namespace MvcBlog
 {
@@ -87,6 +88,9 @@ namespace MvcBlog
                 .AddType(typeof(Models.BlogSite));
             siteTypeBuilder.Build()
                 .DeleteOrphans();
+
+            // Configure Tiny MCE
+            EditorConfig.FromFile("editorconfig.json");
 
             // Register middleware
             app.UseStaticFiles();

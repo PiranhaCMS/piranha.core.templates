@@ -1,7 +1,7 @@
 ﻿{
   "$schema": "http://json.schemastore.org/template",
   "author": "Håkan Edling",
-  "classifications": [ "Web", "Razor", "CMS" ],
+  "classifications": [ "Web", "MVC", "Razor Pages", "CMS" ],
   "identity": "Piranha.Blog.Razor.CSharp",
   "name": "ASP.NET Core Blog with Piranha CMS",
   "tags": {

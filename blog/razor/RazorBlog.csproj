@@ -18,6 +18,6 @@
     <PackageReference Include="Piranha.Data.EF" Version="7.0.0" />
     <PackageReference Include="Piranha.ImageSharp" Version="7.0.0-rc1" />
     <PackageReference Include="Piranha.Local.FileStorage" Version="7.0.0" />
-    <PackageReference Include="Piranha.Manager" Version="7.0.0" />
+    <PackageReference Include="Piranha.Manager" Version="7.0.2" />
   </ItemGroup>
 </Project>
