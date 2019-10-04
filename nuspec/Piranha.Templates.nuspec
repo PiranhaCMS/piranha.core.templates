@@ -84,6 +84,7 @@
     <file src="..\web\mvc\appsettings.json" target="content\web\appsettings.json" />
     <file src="..\web\mvc\compilerconfig.json" target="content\web\compilerconfig.json" />
     <file src="..\web\mvc\compilerconfig.json.defaults" target="content\web\compilerconfig.json.defaults" />
+    <file src="..\web\mvc\editorconfig.json" target="content\web\editorconfig.json" />
     <file src="..\web\mvc\gulpfile.js" target="content\web\gulpfile.js" />
     <file src="..\web\mvc\package.json" target="content\web\package.json" />
     <file src="..\web\mvc\Program.cs" target="content\web\Program.cs" />
