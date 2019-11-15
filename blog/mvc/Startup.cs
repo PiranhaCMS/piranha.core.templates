@@ -41,6 +41,7 @@ namespace MvcBlog
             services.AddPiranhaFileStorage();
             services.AddPiranhaImageSharp();
             services.AddPiranhaManager();
+            services.AddPiranhaTinyMCE();
             services.AddPiranhaMemoryCache();
 
             //
@@ -97,6 +98,7 @@ namespace MvcBlog
             app.UseAuthentication();
             app.UsePiranha();
             app.UsePiranhaManager();
+            app.UsePiranhaTinyMCE();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(name: "areaRoute",

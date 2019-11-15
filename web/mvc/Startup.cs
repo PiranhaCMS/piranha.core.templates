@@ -41,6 +41,7 @@ namespace MvcWeb
             services.AddPiranhaFileStorage();
             services.AddPiranhaImageSharp();
             services.AddPiranhaManager();
+            services.AddPiranhaTinyMCE();
             services.AddPiranhaMemoryCache();
 
             //
@@ -94,6 +95,7 @@ namespace MvcWeb
             app.UseAuthentication();
             app.UsePiranha();
             app.UsePiranhaManager();
+            app.UsePiranhaTinyMCE();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(name: "areaRoute",
