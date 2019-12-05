@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>Piranha.Templates</id>
-    <version>7.1.0</version>
+    <version>8.0.0</version>
     <title>Piranha CMS Templates</title>
     <authors>Håkan Edling</authors>
     <owners>Håkan Edling</owners>
@@ -26,6 +26,7 @@
     <file src="..\empty\web\.template.config\template.json" target="content\empty\.template.config\template.json" />
     <file src="..\empty\web\WebEmpty.csproj" target="content\empty\WebEmpty.csproj" />
     <file src="..\empty\web\appsettings.json" target="content\empty\appsettings.json" />
+    <file src="..\empty\web\editorconfig.json" target="content\empty\editorconfig.json" />
     <file src="..\empty\web\Program.cs" target="content\empty\Program.cs" />
     <file src="..\empty\web\Startup.cs" target="content\empty\Startup.cs" />
 
