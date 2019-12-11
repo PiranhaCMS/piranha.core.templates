@@ -1,8 +1,10 @@
-@model BlogPost
+﻿@model BlogPost
 @inject IApi Api
 
 @{
     ViewBag.Title = Model.Title;
+
+    var parentBlogContent = await Api.Pages.GetByIdAsync(Model.BlogId);
 }
 
 <div class="main">
@@ -10,14 +12,17 @@
         <div class="row justify-content-center">
             <div class="col-sm-10 post-header">
                 <h1>@Model.Title</h1>
-                @if (Model.Tags.Count > 0) {
-                    foreach (var tag in Model.Tags) {
-                        <text><span class="tag"># @tag.Title</span></text>
+                @if (Model.Tags.Count > 0)
+                {
+                    foreach (var tag in Model.Tags)
+                    {
+                        <span class="tag"><a href="@parentBlogContent.Permalink/tag/@tag.Slug">#@tag.Title</a></span>
                     }
                 }
             </div>
         </div>
-        @if (Model.Hero.PrimaryImage.HasValue) {
+        @if (Model.Hero.PrimaryImage.HasValue)
+        {
             <div class="row">
                 <div class="col-sm post-header">
                     <img class="img-fluid" src="@Url.Content(Model.Hero.PrimaryImage.Resize(Api, 1100, 400))">
