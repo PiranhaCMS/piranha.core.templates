@@ -1,12 +1,14 @@
 ﻿using EnterpriseWeb.Data.Pages;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Piranha;
 using Piranha.AspNetCore.Identity.SQLite;
+using Piranha.AttributeBuilder;
+using Piranha.Manager.Editor;
 
 namespace EnterpriseWeb.Web
 {
@@ -20,49 +22,33 @@ namespace EnterpriseWeb.Web
         /// <summary>
         /// Default constructor.
         /// </summary>
-        /// <param name="env">The current hosting environment</param>
-        public Startup(IHostingEnvironment env) {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
-            Configuration = builder.Build();
+        /// <param name="configuration">The current configuration</param>
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddLocalization(options =>
-                options.ResourcesPath = "Resources"
-            );
-            services.AddMvc()
-                .AddPiranhaManagerOptions()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            services.AddPiranhaApplication();
-            services.AddPiranhaFileStorage();
-            services.AddPiranhaImageSharp();
-            services.AddPiranhaManager();
-            services.AddMemoryCache();
-            services.AddPiranhaMemoryCache();
-
-            //
-            // Setup Piranha & Asp.Net Identity with SQLite
-            //
-            services.AddPiranhaEF(options => options.UseSqlite(Configuration.GetConnectionString("piranha")));
-            services.AddPiranhaIdentityWithSeed<IdentitySQLiteDb>(options =>options.UseSqlite(Configuration.GetConnectionString("piranha")));
-
-            //
-            // Setup Piranha & Asp.Net Identity with SQL Server
-            //
-            // services.AddPiranhaEF(options => options.UseSqlServer(Configuration.GetConnectionString("piranha")));
-            // services.AddPiranhaIdentityWithSeed<IdentitySQLServerDb>(options => options.UseSqlServer(Configuration.GetConnectionString("piranha")));
+            // Service setup
+            services.AddPiranha(options =>
+            {
+                options.UseFileStorage();
+                options.UseImageSharp();
+                options.UseManager();
+                options.UseTinyMCE();
+                options.UseMemoryCache();
+                options.UseEF(db =>
+                    db.UseSqlite(Configuration.GetConnectionString("piranha")));
+                options.UseIdentityWithSeed<IdentitySQLiteDb>(db =>
+                    db.UseSqlite(Configuration.GetConnectionString("piranha")));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApi api)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApi api)
         {
             if (env.IsDevelopment())
             {
@@ -76,36 +62,21 @@ namespace EnterpriseWeb.Web
             App.CacheLevel = Piranha.Cache.CacheLevel.Basic;
 
             // Build content types
-            var pageTypeBuilder = new Piranha.AttributeBuilder.PageTypeBuilder(api)
-                .AddType(typeof(BlogArchive))
-                .AddType(typeof(StandardPage))
-                .AddType(typeof(StartPage));
-
-            pageTypeBuilder.Build()
+            new ContentTypeBuilder(api)
+                .AddAssembly(typeof(StandardPage).Assembly)
+                .Build()
                 .DeleteOrphans();
 
-            var postTypeBuilder = new Piranha.AttributeBuilder.PostTypeBuilder(api)
-                .AddType(typeof(BlogPost));
+            // Configure Tiny MCE
+            EditorConfig.FromFile("editorconfig.json");
 
-            postTypeBuilder.Build()
-                .DeleteOrphans();
-
-            // Register middleware
-            app.UseStaticFiles();
-            app.UseAuthentication();
-            app.UsePiranha();
-            app.UsePiranhaManager();
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(name: "areaRoute",
-                    template: "{area:exists}/{controller}/{action}/{id?}",
-                    defaults: new { controller = "Home", action = "Index" });
-
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=home}/{action=index}/{id?}");
+            // Middleware setup
+            app.UsePiranha(options => {
+                options.UseManager();
+                options.UseTinyMCE();
+                options.UseIdentity();
             });
+
         }
     }
 }

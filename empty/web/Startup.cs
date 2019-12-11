@@ -22,7 +22,8 @@ namespace WebEmpty
         /// Default constructor.
         /// </summary>
         /// <param name="configuration">The current configuration</param>
-        public Startup(IConfiguration configuration) {
+        public Startup(IConfiguration configuration)
+        {
             Configuration = configuration;
         }
 

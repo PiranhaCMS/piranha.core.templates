@@ -1,5 +1,6 @@
 using EnterpriseWeb.Data.Regions;
 using Piranha.AttributeBuilder;
+using Piranha.Extend;
 using Piranha.Models;
 
 namespace EnterpriseWeb.Data.Pages
