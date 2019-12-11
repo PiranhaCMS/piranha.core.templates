@@ -9,8 +9,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
-    <PackageReference Include="Piranha" Version="8.0.0" />
-    <PackageReference Include="Piranha.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="Piranha" Version="8.0.1" />
+    <PackageReference Include="Piranha.AspNetCore" Version="8.0.1" />
     <PackageReference Include="Piranha.AspNetCore.Identity.SQLite" Version="8.0.0" />
     <PackageReference Include="Piranha.AttributeBuilder" Version="8.0.0" />
     <PackageReference Include="Piranha.Data.EF" Version="8.0.0" />
