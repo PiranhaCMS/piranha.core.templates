@@ -1,7 +1,6 @@
 @page
 @model ArchiveModel
 @using System.Globalization
-@inject Piranha.IApi Api
 @{
     ViewBag.Title = Model.Data.Title;
 
@@ -53,7 +52,7 @@
             <header>
                 @if (post.Regions.Hero.PrimaryImage.HasValue)
                 {
-                    <a href="@post.Permalink"><img src="@Url.Content(post.Regions.Hero.PrimaryImage.Resize(Api, 930, 360))"></a>
+                    <a href="@post.Permalink"><img src="@Url.Content(post.Regions.Hero.PrimaryImage.Resize(WebApp.Api, 930, 360))"></a>
                 }
                 <h2><a href="@post.Permalink">@post.Title</a></h2>
                 <p class="post-meta">
