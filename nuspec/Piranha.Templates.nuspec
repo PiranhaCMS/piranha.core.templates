@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>Piranha.Templates</id>
-    <version>8.0.2</version>
+    <version>8.1.0</version>
     <title>Piranha CMS Templates</title>
     <authors>Håkan Edling</authors>
     <owners>Håkan Edling</owners>
@@ -11,6 +11,7 @@
     </packageTypes>
     <license type="expression">MIT</license>
     <projectUrl>http://github.com/piranhacms/piranha.core.templates</projectUrl>
+    <icon>images\piranha.png</icon>
     <iconUrl>http://piranhacms.org/assets/twitter-shield.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Piranha CMS Templates</description>
@@ -18,10 +19,11 @@
       See the changelog available at:
       https://github.com/piranhacms/piranha.core/wiki/changelog
     </releaseNotes>
-    <copyright>Copyright 2018-2019 (c) Håkan Edling</copyright>
+    <copyright>Copyright 2018-2020 (c) Håkan Edling</copyright>
     <tags>cms mvc aspnetcore netstandard</tags>
   </metadata>
   <files>
+    <file src="piranha.png" target="images\" />
     <file src="..\empty\web\wwwroot\" target="content\empty\wwwroot\" />
     <file src="..\empty\web\.template.config\template.json" target="content\empty\.template.config\template.json" />
     <file src="..\empty\web\WebEmpty.csproj" target="content\empty\WebEmpty.csproj" />

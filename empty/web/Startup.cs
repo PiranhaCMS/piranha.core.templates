@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Piranha;
 using Piranha.AspNetCore.Identity.SQLite;
 using Piranha.AttributeBuilder;
+using Piranha.Data.EF.SQLite;
 using Piranha.Manager.Editor;
 
 namespace WebEmpty
@@ -39,7 +40,7 @@ namespace WebEmpty
                 options.UseManager();
                 options.UseTinyMCE();
                 options.UseMemoryCache();
-                options.UseEF(db =>
+                options.UseEF<SQLiteDb>(db =>
                     db.UseSqlite(Configuration.GetConnectionString("piranha")));
                 options.UseIdentityWithSeed<IdentitySQLiteDb>(db =>
                     db.UseSqlite(Configuration.GetConnectionString("piranha")));

@@ -48,7 +48,7 @@ namespace MvcWeb.Controllers
 
             // Add the blog archived
             var blogId = Guid.NewGuid();
-            var blogPage = BlogArchive.Create(_api);
+            var blogPage = await BlogArchive.CreateAsync(_api);
             blogPage.Id = blogId;
             blogPage.SiteId = site.Id;
             blogPage.Title = "Blog Archive";
@@ -63,7 +63,7 @@ namespace MvcWeb.Controllers
 
             // Add a blog post
             var postId = Guid.NewGuid();
-            var post = BlogPost.Create(_api);
+            var post = await BlogPost.CreateAsync(_api);
             post.Id = postId;
             post.BlogId = blogPage.Id;
             post.Category = "Uncategorized";
@@ -82,7 +82,7 @@ namespace MvcWeb.Controllers
             await _api.Posts.SaveAsync(post);
 
             // Add the startpage
-            var startPage = StartPage.Create(_api);
+            var startPage = await StartPage.CreateAsync(_api);
             startPage.SiteId = site.Id;
             startPage.Title = "Porta Tortor Euismod";
             startPage.MetaKeywords = "Fusce, Tristique, Nullam, Parturient, Pellentesque";

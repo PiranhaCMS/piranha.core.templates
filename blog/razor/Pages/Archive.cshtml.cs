@@ -39,7 +39,7 @@ namespace RazorBlog.Pages
         public async Task<IActionResult> OnGet(Guid id, int? year = null, int? month = null, int? pagenum = null,
             Guid? category = null, Guid? tag = null, bool draft = false)
         {
-            Data = await _loader.GetPage<Models.BlogArchive>(id, HttpContext.User, draft);
+            Data = await _loader.GetPageAsync<Models.BlogArchive>(id, HttpContext.User, draft);
 
             if (Data != null)
             {

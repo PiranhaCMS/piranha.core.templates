@@ -1,0 +1,45 @@
+@model SinglePostWithComments<BlogPost>
+
+@if (Model.Data.EnableComments)
+{
+    <div id="comments">
+        @if (Model.Data.IsCommentsOpen)
+        {
+            <div class="alert alert-warning mt-5 mb-5 pt-4">
+                <form asp-page-handler="SaveComment" method="post">
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("Id", Model.Data.Id)
+
+                    <h4 class="mb-3">Leave a comment</h4>
+                    <p class="mb-4"><small>
+                        Please note that we won't show your email to others, or use it for sending
+                        unwanted emails. We will only use it to render your Gravatar image and to
+                        validate you as a real person.
+                    </small></p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input name="CommentAuthor" type="text" class="form-control form-control-sm" placeholder="Your name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input name="CommentEmail" type="text" class="form-control form-control-sm" placeholder="Your email address">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input name="CommentUrl" type="text" class="form-control form-control-sm" placeholder="An (optional) URL to your website">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="CommentBody" rows="6" class="form-control form-control-sm" placeholder="Your awesome comment"></textarea>
+                    </div>
+                    <div class="form-group text-left">
+                        <button class="btn btn-sm btn-success">Post Comment</button>
+                    </div>
+                </form>
+            </div>
+        }
+        @Html.DisplayFor(m => m.Comments)
+    </div>
+}
