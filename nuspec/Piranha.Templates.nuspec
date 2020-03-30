@@ -4,8 +4,8 @@
     <id>Piranha.Templates</id>
     <version>8.1.2</version>
     <title>Piranha CMS Templates</title>
-    <authors>Håkan Edling</authors>
-    <owners>Håkan Edling</owners>
+    <authors>Piranha CMS</authors>
+    <owners>Piranha CMS</owners>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
@@ -19,7 +19,7 @@
       See the changelog available at:
       https://github.com/piranhacms/piranha.core/wiki/changelog
     </releaseNotes>
-    <copyright>Copyright 2018-2020 (c) Håkan Edling</copyright>
+    <copyright>Copyright (c) .NET Foundation and Contributors</copyright>
     <tags>cms mvc aspnetcore netstandard</tags>
   </metadata>
   <files>
