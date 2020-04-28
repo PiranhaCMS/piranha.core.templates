@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>Piranha.Templates</id>
-    <version>8.1.2</version>
+    <version>8.1.3</version>
     <title>Piranha CMS Templates</title>
     <authors>Piranha CMS</authors>
     <owners>Piranha CMS</owners>
@@ -24,13 +24,14 @@
   </metadata>
   <files>
     <file src="piranha.png" target="images\" />
-    <file src="..\empty\web\wwwroot\" target="content\empty\wwwroot\" />
-    <file src="..\empty\web\.template.config\template.json" target="content\empty\.template.config\template.json" />
-    <file src="..\empty\web\WebEmpty.csproj" target="content\empty\WebEmpty.csproj" />
-    <file src="..\empty\web\appsettings.json" target="content\empty\appsettings.json" />
-    <file src="..\empty\web\editorconfig.json" target="content\empty\editorconfig.json" />
-    <file src="..\empty\web\Program.cs" target="content\empty\Program.cs" />
-    <file src="..\empty\web\Startup.cs" target="content\empty\Startup.cs" />
+    <file src="..\src\empty\wwwroot\" target="content\empty\wwwroot\" />
+    <file src="..\src\empty\.template.config\dotnetcli.host.json" target="content\empty\.template.config\dotnetcli.host.json" />
+    <file src="..\src\empty\.template.config\template.json" target="content\empty\.template.config\template.json" />
+    <file src="..\src\empty\Empty.csproj" target="content\empty\Empty.csproj" />
+    <file src="..\src\empty\appsettings.json" target="content\empty\appsettings.json" />
+    <file src="..\src\empty\editorconfig.json" target="content\empty\editorconfig.json" />
+    <file src="..\src\empty\Program.cs" target="content\empty\Program.cs" />
+    <file src="..\src\empty\Startup.cs" target="content\empty\Startup.cs" />
 
     <file src="..\blog\mvc\wwwroot\" target="content\blog\wwwroot\" />
     <file src="..\blog\mvc\.template.config\template.json" target="content\blog\.template.config\template.json" />
