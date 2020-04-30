@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <RazorLangVersion>3.0</RazorLangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Piranha.AspNetCore" Version="8.1.0" />
+    <PackageReference Include="Piranha.Manager" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="assets\dist\**\*" />
+  </ItemGroup>
+
+</Project>
