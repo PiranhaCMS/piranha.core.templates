@@ -81,7 +81,7 @@ namespace TemplateModule
         }
 
         /// <summary>
-        /// Uses the Piranha Manager.
+        /// Uses the TemplateModule.
         /// </summary>
         /// <param name="builder">The application builder</param>
         /// <returns>The builder</returns>
@@ -95,10 +95,10 @@ namespace TemplateModule
         }
 
         /// <summary>
-        /// Static accessor to Jellyfish module if it is registered in the Piranha application.
+        /// Static accessor to TemplateModule module if it is registered in the Piranha application.
         /// </summary>
         /// <param name="modules">The available modules</param>
-        /// <returns>The Jellyfish module</returns>
+        /// <returns>The TemplateModule module</returns>
         public static TemplateModule TemplateModule(this Piranha.Runtime.AppModuleList modules)
         {
             return modules.Get<TemplateModule>();
