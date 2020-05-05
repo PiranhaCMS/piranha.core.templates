@@ -88,8 +88,8 @@ namespace MvcBlog.Controllers
             post.Title = "Welcome to Piranha CMS!";
             post.MetaKeywords = "Welcome, Piranha CMS, AspNetCore, MVC, .NET Core";
             post.MetaDescription = "Piranha is the fun, fast and lightweight framework for developing cms-based web applications with ASP.Net Core.";
-            post.Hero.PrimaryImage = bannerId;
-            post.Hero.Ingress = "<p>Piranha CMS is a <strong>lightweight</strong>, <strong>cross-platform</strong> CMS <string>library</string> for <code>NetStandard 2.0</code>, <code>.NET Core</code> & <code>Entity Framework Core</code>. It can be used to add CMS functionality to your existing application or to build a new website from scratch. It has an extensible & pluggable architecture that can support a wide variety of runtime scenarios.</p>";
+            post.PrimaryImage = bannerId;
+            post.Excerpt = "<p>Piranha CMS is a <strong>lightweight</strong>, <strong>cross-platform</strong> CMS <string>library</string> for <code>NetStandard 2.0</code>, <code>.NET Core</code> & <code>Entity Framework Core</code>. It can be used to add CMS functionality to your existing application or to build a new website from scratch. It has an extensible & pluggable architecture that can support a wide variety of runtime scenarios.</p>";
             post.Blocks.Add(new HtmlBlock
             {
                 Body = "<p>Piranha CMS is a <strong>lightweight</strong>, <strong>cross-platform</strong> CMS <string>library</string> for <code>NetStandard 2.0</code>, <code>.NET Core</code> & <code>Entity Framework Core</code>. It can be used to add CMS functionality to your existing application or to build a new website from scratch. It has an extensible & pluggable architecture that can support a wide variety of runtime scenarios.</p><p>Piranha CMS is totally <strong>package based</strong> and available on <code>NuGet</code>. You can read more about the different packages available in the documentation.</p>"

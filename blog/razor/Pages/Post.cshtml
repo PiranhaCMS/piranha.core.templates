@@ -9,9 +9,9 @@
 <div class="container">
     <article>
         <header>
-            @if (Model.Data.Hero.PrimaryImage.HasValue)
+            @if (Model.Data.PrimaryImage.HasValue)
             {
-                <img src="@Url.Content(Model.Data.Hero.PrimaryImage.Resize(WebApp.Api, 930, 360))">
+                <img src="@Url.Content(Model.Data.PrimaryImage.Resize(WebApp.Api, 930, 360))">
             }
             <h1>@Model.Data.Title</h1>
             <p class="post-meta">

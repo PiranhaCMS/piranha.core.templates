@@ -9,7 +9,7 @@
         @if (Model.IsCommentsOpen)
         {
             <div class="alert alert-warning mt-5 mb-5 pt-4">
-                <form asp-page-handler="SaveComment" method="post">
+                <form action="@Model.Permalink/comment" method="post">
                     @Html.AntiForgeryToken()
                     @Html.Hidden("Id", Model.Id)
 

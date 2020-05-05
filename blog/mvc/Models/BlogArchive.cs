@@ -9,6 +9,6 @@ namespace MvcBlog.Models
         /// <summary>
         /// Gets/sets the post archive.
         /// </summary>
-        public PostArchive<DynamicPost> Archive { get; set; }
+        public PostArchive<PostInfo> Archive { get; set; }
     }
 }

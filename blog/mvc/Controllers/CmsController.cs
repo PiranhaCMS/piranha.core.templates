@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Piranha;
 using Piranha.AspNetCore.Services;
+using Piranha.Models;
 using MvcBlog.Models;
 
 namespace MvcBlog.Controllers
@@ -36,10 +37,17 @@ namespace MvcBlog.Controllers
         public async Task<IActionResult> Archive(Guid id, int? year = null, int? month = null, int? page = null,
             Guid? category = null, Guid? tag = null, bool draft = false)
         {
-            var model = await _loader.GetPageAsync<BlogArchive>(id, HttpContext.User, draft);
-            model.Archive = await _api.Archives.GetByIdAsync(id, page, category, tag, year, month);
+            try
+            {
+                var model = await _loader.GetPageAsync<BlogArchive>(id, HttpContext.User, draft);
+                model.Archive = await _api.Archives.GetByIdAsync<PostInfo>(id, page, category, tag, year, month);
 
-            return View(model);
+                return View(model);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return Unauthorized();
+            }
         }
 
         /// <summary>
@@ -50,9 +58,16 @@ namespace MvcBlog.Controllers
         [Route("page")]
         public async Task<IActionResult> Page(Guid id, bool draft = false)
         {
-            var model = await _loader.GetPageAsync<StandardPage>(id, HttpContext.User, draft);
+            try
+            {
+                var model = await _loader.GetPageAsync<StandardPage>(id, HttpContext.User, draft);
 
-            return View(model);
+                return View(model);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return Unauthorized();
+            }
         }
 
         /// <summary>
@@ -63,9 +78,16 @@ namespace MvcBlog.Controllers
         [Route("pagewide")]
         public async Task<IActionResult> PageWide(Guid id, bool draft = false)
         {
-            var model = await _loader.GetPageAsync<StandardPage>(id, HttpContext.User, draft);
+            try
+            {
+                var model = await _loader.GetPageAsync<StandardPage>(id, HttpContext.User, draft);
 
-            return View(model);
+                return View(model);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return Unauthorized();
+            }
         }
 
         /// <summary>
@@ -76,9 +98,49 @@ namespace MvcBlog.Controllers
         [Route("post")]
         public async Task<IActionResult> Post(Guid id, bool draft = false)
         {
-            var model = await _loader.GetPostAsync<BlogPost>(id, HttpContext.User, draft);
+            try
+            {
+                var model = await _loader.GetPostAsync<BlogPost>(id, HttpContext.User, draft);
 
-            return View(model);
+                return View(model);
+            }
+            catch
+            {
+                return Unauthorized();
+            }
+        }
+
+        /// <summary>
+        /// Saves the given comment and then redirects to the post.
+        /// </summary>
+        /// <param name="id">The unique post id</param>
+        /// <param name="commentModel">The comment model</param>
+        [HttpPost]
+        [Route("post/comment")]
+        public async Task<IActionResult> SavePostComment(SaveCommentModel commentModel)
+        {
+            try
+            {
+                var model = await _loader.GetPostAsync<BlogPost>(commentModel.Id, HttpContext.User);
+
+                // Create the comment
+                var comment = new Comment
+                {
+                    IpAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
+                    UserAgent = Request.Headers.ContainsKey("User-Agent") ? Request.Headers["User-Agent"].ToString() : "",
+                    Author = commentModel.CommentAuthor,
+                    Email = commentModel.CommentEmail,
+                    Url = commentModel.CommentUrl,
+                    Body = commentModel.CommentBody
+                };
+                await _api.Posts.SaveCommentAndVerifyAsync(commentModel.Id, comment);
+
+                return Redirect(model.Permalink + "#comments");
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return Unauthorized();
+            }
         }
     }
 }
