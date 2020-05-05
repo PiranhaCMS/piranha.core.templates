@@ -9,15 +9,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Piranha" Version="8.1.0" />
-    <PackageReference Include="Piranha.AspNetCore" Version="8.1.0" />
-    <PackageReference Include="Piranha.AspNetCore.Identity.SQLite" Version="8.1.0" />
-    <PackageReference Include="Piranha.AttributeBuilder" Version="8.1.0" />
-    <PackageReference Include="Piranha.Data.EF.SQLite" Version="8.1.2" />
-    <PackageReference Include="Piranha.ImageSharp" Version="8.1.0-rc1" />
-    <PackageReference Include="Piranha.Local.FileStorage" Version="8.1.0" />
-    <PackageReference Include="Piranha.Manager" Version="8.1.0" />
-    <PackageReference Include="Piranha.Manager.TinyMCE" Version="8.1.0" />
+    <PackageReference Include="Piranha" Version="8.2.0" />
+    <PackageReference Include="Piranha.AspNetCore" Version="8.2.0" />
+    <PackageReference Include="Piranha.AspNetCore.Identity.SQLite" Version="8.2.0" />
+    <PackageReference Include="Piranha.AttributeBuilder" Version="8.2.0" />
+    <PackageReference Include="Piranha.Data.EF.SQLite" Version="8.2.0" />
+    <PackageReference Include="Piranha.ImageSharp" Version="8.2.0-rc1" />
+    <PackageReference Include="Piranha.Local.FileStorage" Version="8.2.0" />
+    <PackageReference Include="Piranha.Manager" Version="8.2.0" />
+    <PackageReference Include="Piranha.Manager.TinyMCE" Version="8.2.0" />
   </ItemGroup>
 
 </Project>

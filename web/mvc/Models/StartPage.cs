@@ -13,7 +13,6 @@ namespace MvcWeb.Models
         /// <summary>
         /// Gets/sets the page hero.
         /// </summary>
-        [Region(Display = RegionDisplayMode.Setting)]
         public Hero Hero { get; set; }
 
         /// <summary>

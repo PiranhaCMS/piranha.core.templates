@@ -7,7 +7,7 @@
     string PrimaryImage() {
         if (Model.Hero.PrimaryImage.HasValue) {
             return $"style=background-image:url({Url.Content(Model.Hero.PrimaryImage)})";
-        } 
+        }
         return "";
     }
 }
@@ -36,14 +36,12 @@
                 <div class="col-sm-12">
                     <h2><a href="@post.Permalink">@post.Title</a></h2>
                     <p>
-                        <strong>@post.Published.Value.ToString("yyyy-MM-dd")</strong> in 
+                        <strong>@post.Published.Value.ToString("yyyy-MM-dd")</strong> in
                         <a href="@Model.Permalink/category/@post.Category.Slug">@post.Category.Title</a>
                     </p>
                 </div>
                 <div class="col-sm-9">
-                    <p>
-                        @post.Regions.Hero.Ingress.Value 
-                    </p>
+                    @Html.Raw(post.Excerpt)
                     <p><a href="@post.Permalink">Read more...</a></p>
                 </div>
                 <div class="col-sm-3 d-xs-none d-md-block">

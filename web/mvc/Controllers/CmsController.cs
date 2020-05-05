@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Piranha;
 using Piranha.AspNetCore.Services;
+using Piranha.Models;
 using System;
 using System.Threading.Tasks;
 
@@ -37,7 +38,7 @@ namespace MvcWeb.Controllers
             Guid? category = null, Guid? tag = null, bool draft = false)
         {
             var model = await _loader.GetPageAsync<BlogArchive>(id, HttpContext.User, draft);
-            model.Archive = await _api.Archives.GetByIdAsync(id, page, category, tag, year, month);
+            model.Archive = await _api.Archives.GetByIdAsync<PostInfo>(id, page, category, tag, year, month);
 
             return View(model);
         }
