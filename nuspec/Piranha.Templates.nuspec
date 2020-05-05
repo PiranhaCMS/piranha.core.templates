@@ -10,7 +10,8 @@
       <packageType name="Template" />
     </packageTypes>
     <license type="expression">MIT</license>
-    <projectUrl>http://github.com/piranhacms/piranha.core.templates</projectUrl>
+    <projectUrl>https://github.com/piranhacms/piranha.core.templates</projectUrl>
+    <repository type="git" url="https://github.com/piranhacms/piranha.core.templates" />
     <icon>images\piranha.png</icon>
     <iconUrl>http://piranhacms.org/assets/twitter-shield.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
