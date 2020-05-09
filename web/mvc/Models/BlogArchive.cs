@@ -11,7 +11,7 @@ namespace MvcWeb.Models
         /// <summary>
         /// Gets/sets the archive hero.
         /// </summary>
-        [Region(Display = RegionDisplayMode.Setting)]
+        [Region]
         public Hero Hero { get; set; }
 
         /// <summary>
