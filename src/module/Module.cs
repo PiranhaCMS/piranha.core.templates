@@ -53,7 +53,7 @@ namespace TemplateModule
             // Register permissions
             foreach (var permission in _permissions)
             {
-                App.Permissions["PiranhaModule"].Add(permission);
+                App.Permissions["TemplateModule"].Add(permission);
             }
 
             // Add manager menu items

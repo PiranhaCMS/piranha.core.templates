@@ -24,7 +24,7 @@ public static class TemplateModuleExtensions
     /// </summary>
     /// <param name="applicationBuilder">The current application builder</param>
     /// <returns>The builder</returns>
-    public static PiranhaApplicationBuilder UseJellyfish(this PiranhaApplicationBuilder applicationBuilder)
+    public static PiranhaApplicationBuilder UseTemplateModule(this PiranhaApplicationBuilder applicationBuilder)
     {
         applicationBuilder.Builder.UseTemplateModule();
 
