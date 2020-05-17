@@ -71,8 +71,8 @@ namespace MvcWeb.Controllers
             post.Title = "Dapibus Cursus Justo";
             post.MetaKeywords = "Nullam, Mollis, Cras, Sem, Ipsum";
             post.MetaDescription = "Aenean lacinia bibendum nulla sed consectetur.";
-            post.Hero.PrimaryImage = bannerId;
-            post.Hero.Ingress = "Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.";
+            post.PrimaryImage = bannerId;
+            post.Excerpt = "Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.";
             post.Blocks.Add(new HtmlBlock
             {
                 Body = "<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.</p>"

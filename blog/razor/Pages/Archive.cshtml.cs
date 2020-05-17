@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Piranha;
 using Piranha.AspNetCore.Services;
+using Piranha.Models;
 using RazorBlog.Models;
 
 namespace RazorBlog.Pages
@@ -43,7 +44,7 @@ namespace RazorBlog.Pages
 
             if (Data != null)
             {
-                Data.Archive = await _api.Archives.GetByIdAsync(id, pagenum, category, tag, year, month);
+                Data.Archive = await _api.Archives.GetByIdAsync<PostInfo>(id, pagenum, category, tag, year, month);
 
                 return Page();
             }

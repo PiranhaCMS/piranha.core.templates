@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>Piranha.Templates</id>
-    <version>8.1.3</version>
+    <version>8.3.0</version>
     <title>Piranha CMS Templates</title>
     <authors>Piranha CMS</authors>
     <owners>Piranha CMS</owners>
@@ -10,7 +10,8 @@
       <packageType name="Template" />
     </packageTypes>
     <license type="expression">MIT</license>
-    <projectUrl>http://github.com/piranhacms/piranha.core.templates</projectUrl>
+    <projectUrl>https://github.com/piranhacms/piranha.core.templates</projectUrl>
+    <repository type="git" url="https://github.com/piranhacms/piranha.core.templates" />
     <icon>images\piranha.png</icon>
     <iconUrl>http://piranhacms.org/assets/twitter-shield.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

@@ -11,12 +11,12 @@ namespace MvcWeb.Models
         /// <summary>
         /// Gets/sets the archive hero.
         /// </summary>
-        [Region(Display = RegionDisplayMode.Setting)]
+        [Region]
         public Hero Hero { get; set; }
 
         /// <summary>
         /// Gets/sets the post archive.
         /// </summary>
-        public PostArchive<DynamicPost> Archive { get; set; }
+        public PostArchive<PostInfo> Archive { get; set; }
     }
 }

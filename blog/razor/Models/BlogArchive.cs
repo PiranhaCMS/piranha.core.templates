@@ -9,6 +9,6 @@ namespace RazorBlog.Models
         /// <summary>
         /// Gets/sets the archive.
         /// </summary>
-        public PostArchive<DynamicPost> Archive { get; set; }
+        public PostArchive<PostInfo> Archive { get; set; }
     }
 }
