@@ -8,7 +8,7 @@ using System.Text;
 
 namespace TemplateModule
 {
-    public class TemplateModule : IModule
+    public class Module : IModule
     {
         private readonly List<PermissionItem> _permissions = new List<PermissionItem>
         {
@@ -57,11 +57,17 @@ namespace TemplateModule
             }
 
             // Add manager menu items
-            Menu.Items["PiranhaModule"].Items.Add(new MenuItem
+            Menu.Items.Add(new MenuItem
             {
-                InternalId = "PiranhaModule",
-                Name = "PiranhaModule",
-                Route = "~/manager/PiranhaModule",
+                InternalId = "TemplateModule",
+                Name = "TemplateModule",
+                Css = "fas fa-box"
+            });
+            Menu.Items["TemplateModule"].Items.Add(new MenuItem
+            {
+                InternalId = "TemplateModuleStart",
+                Name = "Module Start",
+                Route = "~/manager/templatemodule",
                 Policy = Permissions.TemplateModule,
                 Css = "fas fa-box"
             });

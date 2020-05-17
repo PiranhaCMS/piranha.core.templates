@@ -3,105 +3,100 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Piranha;
 using Piranha.AspNetCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using TemplateModule;
 
-namespace TemplateModule
+public static class TemplateModuleExtensions
 {
-    public static class TemplateModuleExtensions
+    /// <summary>
+    /// Adds the TemplateModule module.
+    /// </summary>
+    /// <param name="serviceBuilder"></param>
+    /// <returns></returns>
+    public static PiranhaServiceBuilder UseTemplateModule(this PiranhaServiceBuilder serviceBuilder)
     {
-        /// <summary>
-        /// Adds the TemplateModule module.
-        /// </summary>
-        /// <param name="serviceBuilder"></param>
-        /// <returns></returns>
-        public static PiranhaServiceBuilder UseTemplateModule(this PiranhaServiceBuilder serviceBuilder)
+        serviceBuilder.Services.AddTemplateModule();
+
+        return serviceBuilder;
+    }
+
+    /// <summary>
+    /// Uses the TemplateModule module.
+    /// </summary>
+    /// <param name="applicationBuilder">The current application builder</param>
+    /// <returns>The builder</returns>
+    public static PiranhaApplicationBuilder UseJellyfish(this PiranhaApplicationBuilder applicationBuilder)
+    {
+        applicationBuilder.Builder.UseTemplateModule();
+
+        return applicationBuilder;
+    }
+
+    /// <summary>
+    /// Adds the TemplateModule module.
+    /// </summary>
+    /// <param name="services">The current service collection</param>
+    /// <returns>The services</returns>
+    public static IServiceCollection AddTemplateModule(this IServiceCollection services)
+    {
+        // Add the TemplateModule module
+        Piranha.App.Modules.Register<Module>();
+
+        // Setup authorization policies
+        services.AddAuthorization(o =>
         {
-            serviceBuilder.Services.AddTemplateModule();
-
-            return serviceBuilder;
-        }
-
-        /// <summary>
-        /// Uses the TemplateModule module.
-        /// </summary>
-        /// <param name="applicationBuilder">The current application builder</param>
-        /// <returns>The builder</returns>
-        public static PiranhaApplicationBuilder UseJellyfish(this PiranhaApplicationBuilder applicationBuilder)
-        {
-            applicationBuilder.Builder.UseTemplateModule();
-
-            return applicationBuilder;
-        }
-
-        /// <summary>
-        /// Adds the TemplateModule module.
-        /// </summary>
-        /// <param name="services">The current service collection</param>
-        /// <returns>The services</returns>
-        public static IServiceCollection AddTemplateModule(this IServiceCollection services)
-        {
-            // Add the TemplateModule module
-            Piranha.App.Modules.Register<TemplateModule>();
-
-            // Setup authorization policies
-            services.AddAuthorization(o =>
+            // TemplateModule policies
+            o.AddPolicy(Permissions.TemplateModule, policy =>
             {
-                // TemplateModule policies
-                o.AddPolicy(Permissions.TemplateModule, policy =>
-                {
-                    policy.RequireClaim(Permissions.TemplateModule, Permissions.TemplateModule);
-                });
-
-                // TemplateModule add policy 
-                o.AddPolicy(Permissions.TemplateModuleAdd, policy =>
-                {
-                    policy.RequireClaim(Permissions.TemplateModule, Permissions.TemplateModule);
-                    policy.RequireClaim(Permissions.TemplateModuleAdd, Permissions.TemplateModuleAdd);
-                });
-
-                // TemplateModule edit policy 
-                o.AddPolicy(Permissions.TemplateModuleEdit, policy =>
-                {
-                    policy.RequireClaim(Permissions.TemplateModule, Permissions.TemplateModule);
-                    policy.RequireClaim(Permissions.TemplateModuleEdit, Permissions.TemplateModuleEdit);
-                });
-
-                // TemplateModule delete policy 
-                o.AddPolicy(Permissions.TemplateModuleDelete, policy =>
-                {
-                    policy.RequireClaim(Permissions.TemplateModule, Permissions.TemplateModule);
-                    policy.RequireClaim(Permissions.TemplateModuleDelete, Permissions.TemplateModuleDelete);
-                });
+                policy.RequireClaim(Permissions.TemplateModule, Permissions.TemplateModule);
             });
 
-            // Return the service collection
-            return services;
-        }
-
-        /// <summary>
-        /// Uses the TemplateModule.
-        /// </summary>
-        /// <param name="builder">The application builder</param>
-        /// <returns>The builder</returns>
-        public static IApplicationBuilder UseTemplateModule(this IApplicationBuilder builder)
-        {
-            return builder.UseStaticFiles(new StaticFileOptions
+            // TemplateModule add policy
+            o.AddPolicy(Permissions.TemplateModuleAdd, policy =>
             {
-                FileProvider = new EmbeddedFileProvider(typeof(TemplateModule).Assembly, "TemplateModule.assets.dist"),
-                RequestPath = "/manager/TemplateModule"
+                policy.RequireClaim(Permissions.TemplateModule, Permissions.TemplateModule);
+                policy.RequireClaim(Permissions.TemplateModuleAdd, Permissions.TemplateModuleAdd);
             });
-        }
 
-        /// <summary>
-        /// Static accessor to TemplateModule module if it is registered in the Piranha application.
-        /// </summary>
-        /// <param name="modules">The available modules</param>
-        /// <returns>The TemplateModule module</returns>
-        public static TemplateModule TemplateModule(this Piranha.Runtime.AppModuleList modules)
+            // TemplateModule edit policy
+            o.AddPolicy(Permissions.TemplateModuleEdit, policy =>
+            {
+                policy.RequireClaim(Permissions.TemplateModule, Permissions.TemplateModule);
+                policy.RequireClaim(Permissions.TemplateModuleEdit, Permissions.TemplateModuleEdit);
+            });
+
+            // TemplateModule delete policy
+            o.AddPolicy(Permissions.TemplateModuleDelete, policy =>
+            {
+                policy.RequireClaim(Permissions.TemplateModule, Permissions.TemplateModule);
+                policy.RequireClaim(Permissions.TemplateModuleDelete, Permissions.TemplateModuleDelete);
+            });
+        });
+
+        // Return the service collection
+        return services;
+    }
+
+    /// <summary>
+    /// Uses the TemplateModule.
+    /// </summary>
+    /// <param name="builder">The application builder</param>
+    /// <returns>The builder</returns>
+    public static IApplicationBuilder UseTemplateModule(this IApplicationBuilder builder)
+    {
+        return builder.UseStaticFiles(new StaticFileOptions
         {
-            return modules.Get<TemplateModule>();
-        }
+            FileProvider = new EmbeddedFileProvider(typeof(Module).Assembly, "TemplateModule.assets.dist"),
+            RequestPath = "/manager/TemplateModule"
+        });
+    }
+
+    /// <summary>
+    /// Static accessor to TemplateModule module if it is registered in the Piranha application.
+    /// </summary>
+    /// <param name="modules">The available modules</param>
+    /// <returns>The TemplateModule module</returns>
+    public static Module TemplateModule(this Piranha.Runtime.AppModuleList modules)
+    {
+        return modules.Get<Module>();
     }
 }
