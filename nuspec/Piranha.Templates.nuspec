@@ -25,6 +25,7 @@
   </metadata>
   <files>
     <file src="piranha.png" target="images\" />
+
     <file src="..\src\empty\wwwroot\" target="content\empty\wwwroot\" />
     <file src="..\src\empty\.template.config\dotnetcli.host.json" target="content\empty\.template.config\dotnetcli.host.json" />
     <file src="..\src\empty\.template.config\template.json" target="content\empty\.template.config\template.json" />
@@ -33,6 +34,14 @@
     <file src="..\src\empty\editorconfig.json" target="content\empty\editorconfig.json" />
     <file src="..\src\empty\Program.cs" target="content\empty\Program.cs" />
     <file src="..\src\empty\Startup.cs" target="content\empty\Startup.cs" />
+
+    <file src="..\src\module\.template.config\template.json" target="content\module\.template.config\template.json" />
+    <file src="..\src\module\Areas\Manager\**\*.*" target="content\module\Areas\Manager" />
+    <file src="..\src\module\assets\**\*.*" target="content\module\assets" />
+    <file src="..\src\module\Module.cs" target="content\module\Module.cs" />
+    <file src="..\src\module\Permissions.cs" target="content\module\Permissions.cs" />
+    <file src="..\src\module\TemplateModule.csproj" target="content\module\TemplateModule.csproj" />
+    <file src="..\src\module\TemplateModuleExtensions.cs" target="content\module\TemplateModuleExtensions.cs" />
 
     <file src="..\blog\mvc\wwwroot\" target="content\blog\wwwroot\" />
     <file src="..\blog\mvc\.template.config\template.json" target="content\blog\.template.config\template.json" />
