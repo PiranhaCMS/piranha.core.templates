@@ -1,0 +1,15 @@
+@page
+@model SinglePost<StandardPost>
+
+<div class="container">
+    <h1>@Model.Data.Title</h1>
+</div>
+
+@foreach (var block in Model.Data.Blocks)
+{
+    <div class="@block.CssName()">
+        <div class="container">
+            @Html.DisplayFor(m => block, block.GetType().Name)
+        </div>
+    </div>
+}
