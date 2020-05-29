@@ -61,10 +61,10 @@
                                     <span>
                                         Published @post.Published.Value.ToShortDateString()
                                     </span>
-                                    @if (Model.Data.CommentCount > 0)
+                                    @if (post.EnableComments && post.CommentCount > 0)
                                     {
                                         <span>
-                                            @Model.Data.CommentCount @(Model.Data.CommentCount > 1 ? "Comments" : "Comment")
+                                            <a href="@post.Permalink#comments">@post.CommentCount @(post.CommentCount == 1 ? "comment" : "comments")</a>
                                         </span>
                                     }
                                 </p>
