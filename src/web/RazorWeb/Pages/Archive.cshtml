@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = Model.Data.Title;
     var hasImage = Model.Data.PrimaryImage.HasValue;
+
+    var posts = Model.Archive.Posts.Count;
 }
 
 <header @(hasImage ? "class=has-image" : "") @(hasImage ? $"style=background-image:url({ @Url.Content(WebApp.Media.ResizeImage(Model.Data.PrimaryImage, 1920, 400)) })" : "")>
@@ -20,7 +22,7 @@
     </div>
 </header>
 
-<main>
+<main class="archive">
     @foreach (var block in Model.Data.Blocks)
     {
         <div class="block @block.CssName()">
@@ -30,41 +32,48 @@
         </div>
     }
     <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                @foreach (var post in Model.Archive.Posts)
+        @for (var n = 0; n < posts; n += 2)
+        {
+            <div class="row">
+                @for (var i = n; i < Math.Min(posts, n + 2); i++)
                 {
-                    <article>
-                        <header>
-                            @if (post.PrimaryImage.HasValue)
-                            {
-                                <img class="rounded mb-3" src="@Url.Content(WebApp.Media.ResizeImage(post.PrimaryImage, 855, 350))" alt="@post.PrimaryImage.Media.AltText">
-                            }
-                            <h3>@post.Title</h3>
-                            <p class="post-meta">
-                                <span>
-                                    In <a href="@Model.Data.Permalink/category/@post.Category.Slug">@post.Category.Title</a>
-                                </span>
-                                <span>
-                                    Tags
-                                    @foreach (var tag in post.Tags)
-                                    {
-                                        <a href="@Model.Data.Permalink/tag/@tag.Slug">#@tag.Slug</a>
-                                    }
-                                </span>
-                                <span>
-                                    Published @post.Published.Value.ToShortDateString()
-                                </span>
-                            </p>
-                            <p>@Html.Raw(post.Excerpt)</p>
-                            <a href="@post.Permalink" class="btn btn-primary">Read more</a>
-                        </header>
-                    </article>
+                    var post = Model.Archive.Posts[i];
+
+                    <div class="@(i == 0 ? "col-md-12" : "col-md-6")">
+                        <article>
+                            <header>
+                                @if (post.PrimaryImage.HasValue)
+                                {
+                                    <img class="rounded mb-3" src="@Url.Content(WebApp.Media.ResizeImage(post.PrimaryImage, 1140, 450))" alt="@post.PrimaryImage.Media.AltText">
+                                }
+                                <h3>@post.Title</h3>
+                                <p class="post-meta">
+                                    <span>
+                                        In <a href="@Model.Data.Permalink/category/@post.Category.Slug">@post.Category.Title</a>
+                                    </span>
+                                    <span>
+                                        Tags
+                                        @foreach (var tag in post.Tags)
+                                        {
+                                            <a href="@Model.Data.Permalink/tag/@tag.Slug">#@tag.Slug</a>
+                                        }
+                                    </span>
+                                    <span>
+                                        Published @post.Published.Value.ToShortDateString()
+                                    </span>
+                                </p>
+                                <p>@Html.Raw(post.Excerpt)</p>
+                                <a href="@post.Permalink" class="btn btn-primary">Read more</a>
+                            </header>
+                        </article>
+                    </div>
+                    @if (i == 0)
+                    {
+                        n--;
+                        break;
+                    }
                 }
             </div>
-            <div class="col-md-3">
-                <h3>Twitter Feed</h3>
-            </div>
-        </div>
+        }
     </div>
 </main>
