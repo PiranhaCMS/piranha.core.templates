@@ -175,24 +175,65 @@ namespace MvcBlog.Controllers
 
             await _api.Pages.SaveAsync(startPage);
 
-            // Add a blog post
-            var post = await StandardPost.CreateAsync(_api);
-            post.BlogId = blogPage.Id;
-            post.Category = "Piranha";
-            post.Tags.Add("Development", "Release Info");
-            post.Title = "What's New In 8.3";
-            post.MetaKeywords = "Nibh, Vulputate, Venenatis, Ridiculus";
-            post.MetaDescription = "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum.";
-            post.PrimaryImage = images["bird-s-eye-view-photography-of-lighted-city-3573383.jpg"];
-            post.Excerpt = "For this release we've put our focus on bugfixes and functionality that has been requested by our users to increase productivity in development projects.";
-            post.Published = DateTime.Now;
+            // Add blog posts
+            var post1 = await StandardPost.CreateAsync(_api);
+            post1.BlogId = blogPage.Id;
+            post1.Category = "Magna";
+            post1.Tags.Add("Euismod", "Ridiculus");
+            post1.Title = "Tortor Magna Ultricies";
+            post1.MetaKeywords = "Nibh, Vulputate, Venenatis, Ridiculus";
+            post1.MetaDescription = "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum.";
+            post1.PrimaryImage = images["smiling-woman-working-in-office-with-coworkers-3860641.jpg"];
+            post1.Excerpt = "Maecenas faucibus mollis interdum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui.";
+            post1.Published = DateTime.Now;
 
-            post.Blocks.Add(new HtmlBlock
+            post1.Blocks.Add(new HtmlBlock
+            {
+                Body =
+                    "<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>" +
+                    "<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.</p>" +
+                    "<p>Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum.</p>"
+            });
+            await _api.Posts.SaveAsync(post1);
+
+            var post2 = await StandardPost.CreateAsync(_api);
+            post2.BlogId = blogPage.Id;
+            post2.Category = "Tristique";
+            post2.Tags.Add("Euismod", "Ridiculus");
+            post2.Title = "Sollicitudin Risus Dapibus";
+            post2.MetaKeywords = "Nibh, Vulputate, Venenatis, Ridiculus";
+            post2.MetaDescription = "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum.";
+            post2.PrimaryImage = images["concentrated-little-kids-taking-notes-in-organizer-and-3874109.jpg"];
+            post2.Excerpt = "Donec sed odio dui. Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.";
+            post2.Published = DateTime.Now;
+
+            post2.Blocks.Add(new HtmlBlock
+            {
+                Body =
+                    "<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>" +
+                    "<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.</p>" +
+                    "<p>Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum.</p>"
+            });
+            await _api.Posts.SaveAsync(post2);
+
+            var post3 = await StandardPost.CreateAsync(_api);
+            post3.Id = Guid.NewGuid();
+            post3.BlogId = blogPage.Id;
+            post3.Category = "Piranha";
+            post3.Tags.Add("Development", "Release Info");
+            post3.Title = "What's New In 8.3";
+            post3.MetaKeywords = "Nibh, Vulputate, Venenatis, Ridiculus";
+            post3.MetaDescription = "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum.";
+            post3.PrimaryImage = images["bird-s-eye-view-photography-of-lighted-city-3573383.jpg"];
+            post3.Excerpt = "For this release we've put our focus on bugfixes and functionality that has been requested by our users to increase productivity in development projects.";
+            post3.Published = DateTime.Now;
+
+            post3.Blocks.Add(new HtmlBlock
             {
                 Body =
                     "<p class=\"lead\">Please note that if you have implemented a custom <code>IStorage</code> service in your application you will need to upgrade it as the interfaces have been updated for issues #1124.</p>"
             });
-            post.Blocks.Add(new ColumnBlock
+            post3.Blocks.Add(new ColumnBlock
             {
                 Items = new List<Block>
                 {
@@ -238,7 +279,7 @@ namespace MvcBlog.Controllers
                 }
             });
 
-            await _api.Posts.SaveAsync(post);
+            await _api.Posts.SaveAsync(post3);
 
             var comment = new Piranha.Models.Comment
             {
@@ -248,7 +289,7 @@ namespace MvcBlog.Controllers
                 Body = "Awesome to see that the project is up and running! Now maybe it's time to start customizing it to your needs. You can find a lot of information in the official docs.",
                 IsApproved = true
             };
-            await _api.Posts.SaveCommentAsync(post.Id, comment);
+            await _api.Posts.SaveCommentAsync(post3.Id, comment);
 
             return Redirect("~/");
         }

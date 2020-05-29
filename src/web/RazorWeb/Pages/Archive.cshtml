@@ -61,6 +61,12 @@
                                     <span>
                                         Published @post.Published.Value.ToShortDateString()
                                     </span>
+                                    @if (Model.Data.CommentCount > 0)
+                                    {
+                                        <span>
+                                            @Model.Data.CommentCount @(Model.Data.CommentCount > 1 ? "Comments" : "Comment")
+                                        </span>
+                                    }
                                 </p>
                                 <p>@Html.Raw(post.Excerpt)</p>
                                 <a href="@post.Permalink" class="btn btn-primary">Read more</a>
