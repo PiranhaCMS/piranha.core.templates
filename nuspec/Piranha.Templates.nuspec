@@ -64,25 +64,24 @@
     <file src="..\src\web\razor\Program.cs" target="content\razorweb\Program.cs" />
     <file src="..\src\web\razor\Startup.cs" target="content\razorweb\Startup.cs" />
 
-    <file src="..\web\mvc\wwwroot\" target="content\web\wwwroot\" />
-    <file src="..\web\mvc\.template.config\template.json" target="content\web\.template.config\template.json" />
-    <file src="..\web\mvc\assets\scss\*.*" target="content\web\assets\scss" />
-    <file src="..\web\mvc\Controllers\*.*" target="content\web\Controllers" />
-    <file src="..\web\mvc\Models\**\*.*" target="content\web\Models" />
-    <file src="..\web\mvc\seed\*.*" target="content\web\seed" />
-    <file src="..\web\mvc\Views\Cms\**\*.*" target="content\web\Views\Cms" />
-    <file src="..\web\mvc\Views\Setup\*.*" target="content\web\Views\Setup" />
-    <file src="..\web\mvc\Views\Shared\**\*.*" target="content\web\Views\Shared" />
-    <file src="..\web\mvc\Views\*.*" target="content\web\Views" />
-    <file src="..\web\mvc\wwwroot\css\*.*" target="content\web\wwwroot\css" />
-    <file src="..\web\mvc\MvcWeb.csproj" target="content\web\MvcWeb.csproj" />
-    <file src="..\web\mvc\appsettings.json" target="content\web\appsettings.json" />
-    <file src="..\web\mvc\compilerconfig.json" target="content\web\compilerconfig.json" />
-    <file src="..\web\mvc\compilerconfig.json.defaults" target="content\web\compilerconfig.json.defaults" />
-    <file src="..\web\mvc\editorconfig.json" target="content\web\editorconfig.json" />
-    <file src="..\web\mvc\gulpfile.js" target="content\web\gulpfile.js" />
-    <file src="..\web\mvc\package.json" target="content\web\package.json" />
-    <file src="..\web\mvc\Program.cs" target="content\web\Program.cs" />
-    <file src="..\web\mvc\Startup.cs" target="content\web\Startup.cs" />
+    <file src="..\src\web\mvc\wwwroot\" target="content\mvcweb\wwwroot\" />
+    <file src="..\src\web\mvc\.template.config\template.json" target="content\mvcweb\.template.config\dotnetcli.host.json" />
+    <file src="..\src\web\mvc\.template.config\template.json" target="content\mvcweb\.template.config\template.json" />
+    <file src="..\src\web\mvc\assets\scss\*.*" target="content\mvcweb\assets\scss" />
+    <file src="..\src\web\mvc\Controllers\*.*" target="content\mvcweb\Controllers" />
+    <file src="..\src\web\mvc\Models\**\*.*" target="content\mvcweb\Models" />
+    <file src="..\src\web\mvc\seed\*.*" target="content\mvcweb\seed" />
+    <file src="..\src\web\mvc\Views\**\*.*" target="content\mvcweb\Views" />
+    <file src="..\src\web\mvc\wwwroot\assets\**\*.*" target="content\mvcweb\wwwroot\assets" />
+    <file src="..\src\web\mvc\MvcWeb.csproj" target="content\mvcweb\MvcWeb.csproj" />
+    <file src="..\src\web\mvc\appsettings.Development.json" target="content\mvcweb\appsettings.Development.json" />
+    <file src="..\src\web\mvc\appsettings.json" target="content\mvcweb\appsettings.json" />
+    <file src="..\src\web\mvc\compilerconfig.json" target="content\mvcweb\compilerconfig.json" />
+    <file src="..\src\web\mvc\compilerconfig.json.defaults" target="content\mvcweb\compilerconfig.json.defaults" />
+    <file src="..\src\web\mvc\editorconfig.json" target="content\mvcweb\editorconfig.json" />
+    <file src="..\src\web\mvc\gulpfile.js" target="content\mvcweb\gulpfile.js" />
+    <file src="..\src\web\mvc\package.json" target="content\mvcweb\package.json" />
+    <file src="..\src\web\mvc\Program.cs" target="content\mvcweb\Program.cs" />
+    <file src="..\src\web\mvc\Startup.cs" target="content\mvcweb\Startup.cs" />
   </files>
 </package>
