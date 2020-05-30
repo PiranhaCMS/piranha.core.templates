@@ -46,7 +46,7 @@ namespace Empty
 #if (UseBlobStorage)
                 options.UseBlobStorage(_config.GetConnectionString("blobstorage"));
 #else
-                options.UseFileStorage();
+                options.UseFileStorage(naming: Piranha.Local.FileStorageNaming.UniqueFolderNames);
 #endif
                 options.UseImageSharp();
                 options.UseManager();
