@@ -44,7 +44,9 @@
                             <header>
                                 @if (post.PrimaryImage.HasValue)
                                 {
-                                    <img class="rounded mb-3" src="@Url.Content(WebApp.Media.ResizeImage(post.PrimaryImage, 1140, 450))" alt="@post.PrimaryImage.Media.AltText">
+                                    <a href="@post.Permalink">
+                                        <img class="rounded mb-3" src="@Url.Content(WebApp.Media.ResizeImage(post.PrimaryImage, 1140, 450))" alt="@post.PrimaryImage.Media.AltText">
+                                    </a>
                                 }
                                 <h3>@post.Title</h3>
                                 <p class="post-meta">
@@ -58,9 +60,12 @@
                                             <a href="@Model.Data.Permalink/tag/@tag.Slug">#@tag.Slug</a>
                                         }
                                     </span>
-                                    <span>
-                                        Published @post.Published.Value.ToShortDateString()
-                                    </span>
+                                    @if (post.IsPublished)
+                                    {
+                                        <span>
+                                            Published @post.Published.Value.ToShortDateString()
+                                        </span>
+                                    }
                                     @if (post.EnableComments && post.CommentCount > 0)
                                     {
                                         <span>

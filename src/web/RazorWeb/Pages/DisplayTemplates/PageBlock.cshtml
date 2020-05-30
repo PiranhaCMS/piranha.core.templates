@@ -3,7 +3,12 @@
 @if (Model.Body.Page != null)
 {
     <div class="card">
-        <img class="card-img-top" src="@Url.Content(WebApp.Media.ResizeImage(Model.Body.Page.PrimaryImage, 540, 200))">
+        @if (Model.Body.Page.PrimaryImage.HasValue)
+        {
+            <a href="@Model.Body.Page.Permalink">
+                <img class="card-img-top" src="@Url.Content(WebApp.Media.ResizeImage(Model.Body.Page.PrimaryImage, 540, 200))">
+            </a>
+        }
         <div class="card-body">
             <h5>@Model.Body.Page.Title</h5>
             <p>@Html.Raw(Model.Body.Page.Excerpt)</p>

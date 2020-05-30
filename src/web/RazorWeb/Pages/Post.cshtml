@@ -3,12 +3,37 @@
 @{
     ViewData["Title"] = Model.Data.Title;
     var hasImage = Model.Data.PrimaryImage.HasValue;
+    var archive = await WebApp.Api.Pages.GetByIdAsync(Model.Data.BlogId);
 }
 
 <header @(hasImage ? "class=has-image" : "") @(hasImage ? $"style=background-image:url({ @Url.Content(WebApp.Media.ResizeImage(Model.Data.PrimaryImage, 1920, 400)) })" : "")>
     <div class="dimmer"></div>
     <div class="container text-center">
         <h1>@Model.Data.Title</h1>
+        <p class="post-meta">
+            <span>
+                In <a href="@archive.Permalink/category/@Model.Data.Category.Slug">@Model.Data.Category.Title</a>
+            </span>
+            <span>
+                Tags
+                @foreach (var tag in Model.Data.Tags)
+                {
+                    <a href="@archive.Permalink/tag/@tag.Slug">#@tag.Slug</a>
+                }
+            </span>
+            @if (Model.Data.IsPublished)
+            {
+                <span>
+                    Published @Model.Data.Published.Value.ToShortDateString()
+                </span>
+            }
+            @if (Model.Data.EnableComments && Model.Data.CommentCount > 0)
+            {
+                <span>
+                    <a href="#comments">@Model.Data.CommentCount @(Model.Data.CommentCount == 1 ? "comment" : "comments")</a>
+                </span>
+            }
+        </p>
         @if (!string.IsNullOrWhiteSpace(Model.Data.Excerpt))
         {
             <div class="row justify-content-center">
