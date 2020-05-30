@@ -10,7 +10,7 @@ using Piranha.Extend.Blocks;
 using Piranha.Models;
 using RazorWeb.Models;
 
-namespace MvcBlog.Controllers
+namespace RazorWeb.Controllers
 {
     /// <summary>
     /// This controller is only used when the project is first started

@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "http://json.schemastore.org/template",
-  "author": "Håkan Edling",
+  "author": "Piranha CMS",
   "classifications": [ "Web", "CMS" ],
   "identity": "Piranha.Razor.CSharp",
   "name": "ASP.NET Core Razor Pages Web with Piranha CMS",
