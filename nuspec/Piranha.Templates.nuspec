@@ -44,7 +44,7 @@
     <file src="..\src\module\TemplateModuleExtensions.cs" target="content\module\TemplateModuleExtensions.cs" />
 
     <file src="..\src\web\razor\wwwroot\" target="content\razorweb\wwwroot\" />
-    <file src="..\src\web\razor\.template.config\template.json" target="content\razorweb\.template.config\dotnetcli.host.json" />
+    <file src="..\src\web\razor\.template.config\dotnetcli.host.json" target="content\razorweb\.template.config\dotnetcli.host.json" />
     <file src="..\src\web\razor\.template.config\template.json" target="content\razorweb\.template.config\template.json" />
     <file src="..\src\web\razor\assets\scss\*.*" target="content\razorweb\assets\scss" />
     <file src="..\src\web\razor\Controllers\*.*" target="content\razorweb\Controllers" />
@@ -65,7 +65,7 @@
     <file src="..\src\web\razor\Startup.cs" target="content\razorweb\Startup.cs" />
 
     <file src="..\src\web\mvc\wwwroot\" target="content\mvcweb\wwwroot\" />
-    <file src="..\src\web\mvc\.template.config\template.json" target="content\mvcweb\.template.config\dotnetcli.host.json" />
+    <file src="..\src\web\mvc\.template.config\dotnetcli.host.json" target="content\mvcweb\.template.config\dotnetcli.host.json" />
     <file src="..\src\web\mvc\.template.config\template.json" target="content\mvcweb\.template.config\template.json" />
     <file src="..\src\web\mvc\assets\scss\*.*" target="content\mvcweb\assets\scss" />
     <file src="..\src\web\mvc\Controllers\*.*" target="content\mvcweb\Controllers" />
