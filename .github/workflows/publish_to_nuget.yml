@@ -21,8 +21,8 @@ jobs:
         NUGET_AUTH_TOKEN: ${{secrets.NugetAuthToken}}
 
     # Setup Nuget.exe
-    - name: Setup Nuget.exe
-      uses: warrenbuckley/Setup-Nuget@v1
+    - name: Setup NuGet.exe for use with actions
+      uses: NuGet/setup-nuget@v1.0.2
 
     # Build and pack
     - name: Build solution and generate NuGet package
