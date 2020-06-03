@@ -4,7 +4,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-18.04
     name: Publish NuGet Packages
     steps:
 
