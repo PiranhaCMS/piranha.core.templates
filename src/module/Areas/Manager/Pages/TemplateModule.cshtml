@@ -1,0 +1,75 @@
+﻿@page "~/manager/templatemodule"
+@{
+    ViewBag.Title = "TemplateModule";
+    ViewBag.MenuItem = "TemplateModule";
+}
+
+<div id="TemplateModule">
+    <div class="top">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">Content</li>
+                <li class="breadcrumb-item active" aria-current="page">TemplateModule</li>
+            </ol>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="top-nav">
+                <button class="btn btn-icon btn-info">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="btn btn-labeled btn-primary">
+                    <i class="fas fa-plus"></i>Secondary action
+                </button>
+                <button class="btn btn-labeled btn-success">
+                    <i class="fas fa-check"></i>Main action
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>Standard Column</th>
+                    <th class="td-medium">Medium Column</th>
+                    <th class="td-small">Date</th>
+                    <th class="actions one"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bibendum Ornare Venenatis</td>
+                    <td>Fringilla Vehicula</td>
+                    <td>@DateTime.Now.ToString("yyyy-MM-dd")</td>
+                    <td class="actions"><a href="#" class="danger"><i class="fas fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>Tellus Etiam Ligula</td>
+                    <td>Condimentum Tristique</td>
+                    <td>@DateTime.Now.ToString("yyyy-MM-dd")</td>
+                    <td class="actions"><a href="#" class="danger"><i class="fas fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <td>Quam Consectetur Malesuada</td>
+                    <td>Dapibus Vehicula</td>
+                    <td>@DateTime.Now.ToString("yyyy-MM-dd")</td>
+                    <td class="actions"><a href="#" class="danger"><i class="fas fa-trash"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="title">Form Test</span>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Standard input</label>
+                    <input type="text" class="form-control" placeholder="Standard text input">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

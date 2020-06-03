@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>Piranha.Templates</id>
-    <version>8.2.1</version>
+    <version>8.3.0</version>
     <title>Piranha CMS Templates</title>
     <authors>Piranha CMS</authors>
     <owners>Piranha CMS</owners>
@@ -25,73 +25,63 @@
   </metadata>
   <files>
     <file src="piranha.png" target="images\" />
-    <file src="..\empty\web\wwwroot\" target="content\empty\wwwroot\" />
-    <file src="..\empty\web\.template.config\template.json" target="content\empty\.template.config\template.json" />
-    <file src="..\empty\web\WebEmpty.csproj" target="content\empty\WebEmpty.csproj" />
-    <file src="..\empty\web\appsettings.json" target="content\empty\appsettings.json" />
-    <file src="..\empty\web\editorconfig.json" target="content\empty\editorconfig.json" />
-    <file src="..\empty\web\Program.cs" target="content\empty\Program.cs" />
-    <file src="..\empty\web\Startup.cs" target="content\empty\Startup.cs" />
 
-    <file src="..\blog\mvc\wwwroot\" target="content\blog\wwwroot\" />
-    <file src="..\blog\mvc\.template.config\template.json" target="content\blog\.template.config\template.json" />
-    <file src="..\blog\mvc\assets\scss\*.*" target="content\blog\assets\scss" />
-    <file src="..\blog\mvc\Controllers\*.*" target="content\blog\Controllers" />
-    <file src="..\blog\mvc\Models\**\*.*" target="content\blog\Models" />
-    <file src="..\blog\mvc\seed\*.*" target="content\blog\seed" />
-    <file src="..\blog\mvc\Views\*.*" target="content\blog\Views" />
-    <file src="..\blog\mvc\Views\Cms\**\*.*" target="content\blog\Views\Cms" />
-    <file src="..\blog\mvc\Views\Setup\*.*" target="content\blog\Views\Setup" />
-    <file src="..\blog\mvc\Views\Shared\**\*.*" target="content\blog\Views\Shared" />
-    <file src="..\blog\mvc\wwwroot\assets\**\*.*" target="content\blog\wwwroot\assets" />
-    <file src="..\blog\mvc\MvcBlog.csproj" target="content\blog\MvcBlog.csproj" />
-    <file src="..\blog\mvc\appsettings.json" target="content\blog\appsettings.json" />
-    <file src="..\blog\mvc\compilerconfig.json" target="content\blog\compilerconfig.json" />
-    <file src="..\blog\mvc\compilerconfig.json.defaults" target="content\blog\compilerconfig.json.defaults" />
-    <file src="..\blog\mvc\editorconfig.json" target="content\blog\editorconfig.json" />
-    <file src="..\blog\mvc\gulpfile.js" target="content\blog\gulpfile.js" />
-    <file src="..\blog\mvc\package.json" target="content\blog\package.json" />
-    <file src="..\blog\mvc\Program.cs" target="content\blog\Program.cs" />
-    <file src="..\blog\mvc\Startup.cs" target="content\blog\Startup.cs" />
+    <file src="..\src\empty\wwwroot\" target="content\empty\wwwroot\" />
+    <file src="..\src\empty\.template.config\dotnetcli.host.json" target="content\empty\.template.config\dotnetcli.host.json" />
+    <file src="..\src\empty\.template.config\template.json" target="content\empty\.template.config\template.json" />
+    <file src="..\src\empty\Empty.csproj" target="content\empty\Empty.csproj" />
+    <file src="..\src\empty\appsettings.json" target="content\empty\appsettings.json" />
+    <file src="..\src\empty\editorconfig.json" target="content\empty\editorconfig.json" />
+    <file src="..\src\empty\Program.cs" target="content\empty\Program.cs" />
+    <file src="..\src\empty\Startup.cs" target="content\empty\Startup.cs" />
 
-    <file src="..\blog\razor\wwwroot\" target="content\razorblog\wwwroot\" />
-    <file src="..\blog\razor\.template.config\template.json" target="content\razorblog\.template.config\template.json" />
-    <file src="..\blog\razor\assets\scss\*.*" target="content\razorblog\assets\scss" />
-    <file src="..\blog\razor\Controllers\*.*" target="content\razorblog\Controllers" />
-    <file src="..\blog\razor\Models\**\*.*" target="content\razorblog\Models" />
-    <file src="..\blog\razor\Pages\**\*.*" target="content\razorblog\Pages" />
-    <file src="..\blog\razor\seed\*.*" target="content\razorblog\seed" />
-    <file src="..\blog\razor\Views\Setup\*.*" target="content\razorblog\Views\Setup" />
-    <file src="..\blog\razor\wwwroot\assets\**\*.*" target="content\razorblog\wwwroot\assets" />
-    <file src="..\blog\razor\RazorBlog.csproj" target="content\razorblog\RazorBlog.csproj" />
-    <file src="..\blog\razor\appsettings.json" target="content\razorblog\appsettings.json" />
-    <file src="..\blog\razor\compilerconfig.json" target="content\razorblog\compilerconfig.json" />
-    <file src="..\blog\razor\compilerconfig.json.defaults" target="content\razorblog\compilerconfig.json.defaults" />
-    <file src="..\blog\razor\editorconfig.json" target="content\razorblog\editorconfig.json" />
-    <file src="..\blog\razor\gulpfile.js" target="content\razorblog\gulpfile.js" />
-    <file src="..\blog\razor\package.json" target="content\razorblog\package.json" />
-    <file src="..\blog\razor\Program.cs" target="content\razorblog\Program.cs" />
-    <file src="..\blog\razor\Startup.cs" target="content\razorblog\Startup.cs" />
+    <file src="..\src\module\.template.config\template.json" target="content\module\.template.config\template.json" />
+    <file src="..\src\module\Areas\Manager\**\*.*" target="content\module\Areas\Manager" />
+    <file src="..\src\module\assets\**\*.*" target="content\module\assets" />
+    <file src="..\src\module\Module.cs" target="content\module\Module.cs" />
+    <file src="..\src\module\Permissions.cs" target="content\module\Permissions.cs" />
+    <file src="..\src\module\TemplateModule.csproj" target="content\module\TemplateModule.csproj" />
+    <file src="..\src\module\TemplateModuleExtensions.cs" target="content\module\TemplateModuleExtensions.cs" />
 
-    <file src="..\web\mvc\wwwroot\" target="content\web\wwwroot\" />
-    <file src="..\web\mvc\.template.config\template.json" target="content\web\.template.config\template.json" />
-    <file src="..\web\mvc\assets\scss\*.*" target="content\web\assets\scss" />
-    <file src="..\web\mvc\Controllers\*.*" target="content\web\Controllers" />
-    <file src="..\web\mvc\Models\**\*.*" target="content\web\Models" />
-    <file src="..\web\mvc\seed\*.*" target="content\web\seed" />
-    <file src="..\web\mvc\Views\Cms\**\*.*" target="content\web\Views\Cms" />
-    <file src="..\web\mvc\Views\Setup\*.*" target="content\web\Views\Setup" />
-    <file src="..\web\mvc\Views\Shared\**\*.*" target="content\web\Views\Shared" />
-    <file src="..\web\mvc\Views\*.*" target="content\web\Views" />
-    <file src="..\web\mvc\wwwroot\css\*.*" target="content\web\wwwroot\css" />
-    <file src="..\web\mvc\MvcWeb.csproj" target="content\web\MvcWeb.csproj" />
-    <file src="..\web\mvc\appsettings.json" target="content\web\appsettings.json" />
-    <file src="..\web\mvc\compilerconfig.json" target="content\web\compilerconfig.json" />
-    <file src="..\web\mvc\compilerconfig.json.defaults" target="content\web\compilerconfig.json.defaults" />
-    <file src="..\web\mvc\editorconfig.json" target="content\web\editorconfig.json" />
-    <file src="..\web\mvc\gulpfile.js" target="content\web\gulpfile.js" />
-    <file src="..\web\mvc\package.json" target="content\web\package.json" />
-    <file src="..\web\mvc\Program.cs" target="content\web\Program.cs" />
-    <file src="..\web\mvc\Startup.cs" target="content\web\Startup.cs" />
+    <file src="..\src\web\razor\wwwroot\" target="content\razorweb\wwwroot\" />
+    <file src="..\src\web\razor\.template.config\dotnetcli.host.json" target="content\razorweb\.template.config\dotnetcli.host.json" />
+    <file src="..\src\web\razor\.template.config\template.json" target="content\razorweb\.template.config\template.json" />
+    <file src="..\src\web\razor\assets\scss\*.*" target="content\razorweb\assets\scss" />
+    <file src="..\src\web\razor\Controllers\*.*" target="content\razorweb\Controllers" />
+    <file src="..\src\web\razor\Models\**\*.*" target="content\razorweb\Models" />
+    <file src="..\src\web\razor\Pages\**\*.*" target="content\razorweb\Pages" />
+    <file src="..\src\web\razor\seed\*.*" target="content\razorweb\seed" />
+    <file src="..\src\web\razor\Views\**\*.*" target="content\razorweb\Views" />
+    <file src="..\src\web\razor\wwwroot\assets\**\*.*" target="content\razorweb\wwwroot\assets" />
+    <file src="..\src\web\razor\RazorWeb.csproj" target="content\razorweb\RazorWeb.csproj" />
+    <file src="..\src\web\razor\appsettings.Development.json" target="content\razorweb\appsettings.Development.json" />
+    <file src="..\src\web\razor\appsettings.json" target="content\razorweb\appsettings.json" />
+    <file src="..\src\web\razor\compilerconfig.json" target="content\razorweb\compilerconfig.json" />
+    <file src="..\src\web\razor\compilerconfig.json.defaults" target="content\razorweb\compilerconfig.json.defaults" />
+    <file src="..\src\web\razor\editorconfig.json" target="content\razorweb\editorconfig.json" />
+    <file src="..\src\web\razor\gulpfile.js" target="content\razorweb\gulpfile.js" />
+    <file src="..\src\web\razor\package.json" target="content\razorweb\package.json" />
+    <file src="..\src\web\razor\Program.cs" target="content\razorweb\Program.cs" />
+    <file src="..\src\web\razor\Startup.cs" target="content\razorweb\Startup.cs" />
+
+    <file src="..\src\web\mvc\wwwroot\" target="content\mvcweb\wwwroot\" />
+    <file src="..\src\web\mvc\.template.config\dotnetcli.host.json" target="content\mvcweb\.template.config\dotnetcli.host.json" />
+    <file src="..\src\web\mvc\.template.config\template.json" target="content\mvcweb\.template.config\template.json" />
+    <file src="..\src\web\mvc\assets\scss\*.*" target="content\mvcweb\assets\scss" />
+    <file src="..\src\web\mvc\Controllers\*.*" target="content\mvcweb\Controllers" />
+    <file src="..\src\web\mvc\Models\**\*.*" target="content\mvcweb\Models" />
+    <file src="..\src\web\mvc\seed\*.*" target="content\mvcweb\seed" />
+    <file src="..\src\web\mvc\Views\**\*.*" target="content\mvcweb\Views" />
+    <file src="..\src\web\mvc\wwwroot\assets\**\*.*" target="content\mvcweb\wwwroot\assets" />
+    <file src="..\src\web\mvc\MvcWeb.csproj" target="content\mvcweb\MvcWeb.csproj" />
+    <file src="..\src\web\mvc\appsettings.Development.json" target="content\mvcweb\appsettings.Development.json" />
+    <file src="..\src\web\mvc\appsettings.json" target="content\mvcweb\appsettings.json" />
+    <file src="..\src\web\mvc\compilerconfig.json" target="content\mvcweb\compilerconfig.json" />
+    <file src="..\src\web\mvc\compilerconfig.json.defaults" target="content\mvcweb\compilerconfig.json.defaults" />
+    <file src="..\src\web\mvc\editorconfig.json" target="content\mvcweb\editorconfig.json" />
+    <file src="..\src\web\mvc\gulpfile.js" target="content\mvcweb\gulpfile.js" />
+    <file src="..\src\web\mvc\package.json" target="content\mvcweb\package.json" />
+    <file src="..\src\web\mvc\Program.cs" target="content\mvcweb\Program.cs" />
+    <file src="..\src\web\mvc\Startup.cs" target="content\mvcweb\Startup.cs" />
   </files>
 </package>

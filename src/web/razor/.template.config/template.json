@@ -1,0 +1,75 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Piranha CMS",
+  "classifications": [ "Web", "CMS" ],
+  "identity": "Piranha.Razor.CSharp",
+  "name": "ASP.NET Core Razor Pages Web with Piranha CMS",
+  "tags": {
+    "language": "C#"
+  },
+  "shortName": "piranha.razor",
+  "sourceName": "RazorWeb",
+  "symbols": {
+    "Database": {
+      "type": "parameter",
+      "datatype": "choice",
+      "description": "Specifies the database provider that should be used",
+      "defaultValue": "SQLite",
+      "choices": [
+        {
+          "choice": "SQLite",
+          "description": "Use SQLite as database"
+        },
+        {
+          "choice": "SQLServer",
+          "description": "Use SQL Server as database"
+        },
+        {
+          "choice": "MySql",
+          "description": "Use MySql as database"
+        },
+        {
+          "choice": "PostgreSql",
+          "description": "Use PostgreSql as database"
+        }
+      ]
+    },
+    "Storage": {
+      "type": "parameter",
+      "datatype": "choice",
+      "description": "Specifies the storage provider that should be used",
+      "defaultValue": "FileStorage",
+      "choices": [
+        {
+          "choice": "FileStorage",
+          "description": "Use FileStorage for uploaded assets"
+        },
+        {
+          "choice": "BlobStorage",
+          "description": "Use Azure BlobStorage for uploaded assets"
+        }
+      ]
+    },
+
+    "UseSQLServer": {
+      "type": "computed",
+      "datatype": "bool",
+      "value": "(Database == \"SQLServer\")"
+    },
+    "UseMySql": {
+      "type": "computed",
+      "datatype": "bool",
+      "value": "(Database == \"MySql\")"
+    },
+    "UsePostgreSql": {
+      "type": "computed",
+      "datatype": "bool",
+      "value": "(Database == \"PostgreSql\")"
+    },
+    "UseBlobStorage": {
+      "type": "computed",
+      "datatype": "bool",
+      "value": "(Storage == \"BlobStorage\")"
+    }
+  }
+}
