@@ -34,8 +34,8 @@ jobs:
 
     # Sign packages
     - name: Sign packages
-      run: ./SignClient "SIGN" --input "artifacts/*.nupkg" --config "sign.json" --user "${{secrets.SignClientUser}}" --secret "${{secrets.SignClientSecret}}" --name "Piranha" --description "Piranha" --descriptionUrl "https://github.com/piranhacms/piranha.core"
+      run: ./SignClient "SIGN" --input "artifacts/*.nupkg" --config "sign.json" --user "${{secrets.SignClientUser}}" --secret "${{secrets.SignClientSecret}}" --name "Piranha.Templates" --description "Piranha.Templates" --descriptionUrl "https://github.com/piranhacms/piranha.core.templates"
 
     # Push to NuGet
-    #- name: Push generated package to GitHub registry
-    #  run: dotnet nuget push **/*.nupkg --skip-duplicate -k ${{ secrets.NugetAuthToken }}
+    - name: Push generated package to GitHub registry
+      run: dotnet nuget push '**/Piranha*.nupkg' --skip-duplicate -k ${{ secrets.NugetAuthToken }}
