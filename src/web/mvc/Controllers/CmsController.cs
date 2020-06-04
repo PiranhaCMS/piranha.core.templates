@@ -8,6 +8,7 @@ using MvcWeb.Models;
 
 namespace MvcWeb.Controllers
 {
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class CmsController : Controller
     {
         private readonly IApi _api;

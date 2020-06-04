@@ -16,6 +16,7 @@ namespace MvcWeb.Controllers
     /// This controller is only used when the project is first started
     /// and no pages has been added to the database. Feel free to remove it.
     /// </summary>
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class SetupController : Controller
     {
         private readonly IApi _api;
