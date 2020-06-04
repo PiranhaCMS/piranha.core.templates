@@ -6,14 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="Piranha" Version="8.3.0" />
-    <PackageReference Include="Piranha.AspNetCore.Identity.SQLite" Version="8.3.0" />
-    <PackageReference Condition="$(UseSQLServer) != True and $(UseMySql) != True and $(UsePostgreSql) != True" Include="Piranha.AspNetCore.Identity.SQLite" Version="8.3.0" />
+    <PackageReference Condition="$(UseSQLite) != False" Include="Piranha.AspNetCore.Identity.SQLite" Version="8.3.0" />
     <PackageReference Condition="$(UseSQLServer) == True" Include="Piranha.AspNetCore.Identity.SQLServer" Version="8.3.0" />
-    <PackageReference Condition="$(UseMySql) == True" Include="Piranha.AspNetCore.Identity.MySql" Version="8.3.0" />
-    <PackageReference Condition="$(UsePostgreSql) == True" Include="Piranha.AspNetCore.Identity.PostgreSql" Version="8.3.0" />
+    <PackageReference Condition="$(UseMySql) == True" Include="Piranha.AspNetCore.Identity.MySql" Version="8.3.1" />
+    <PackageReference Condition="$(UsePostgreSql) == True" Include="Piranha.AspNetCore.Identity.PostgreSql" Version="8.3.1" />
     <PackageReference Include="Piranha.AttributeBuilder" Version="8.3.0" />
     <PackageReference Condition="$(UseBlobStorage) == True" Include="Piranha.Azure.BlobStorage" Version="8.3.0" />
-    <PackageReference Condition="$(UseSQLServer) != True and $(UseMySql) != True and $(UsePostgreSql) != True" Include="Piranha.Data.EF.SQLite" Version="8.3.0" />
+    <PackageReference Condition="$(UseSQLite) != False" Include="Piranha.Data.EF.SQLite" Version="8.3.0" />
     <PackageReference Condition="$(UseSQLServer) == True" Include="Piranha.Data.EF.SQLServer" Version="8.3.0" />
     <PackageReference Condition="$(UseMySql) == True" Include="Piranha.Data.EF.MySql" Version="8.3.0" />
     <PackageReference Condition="$(UsePostgreSql) == True" Include="Piranha.Data.EF.PostgreSql" Version="8.3.0" />

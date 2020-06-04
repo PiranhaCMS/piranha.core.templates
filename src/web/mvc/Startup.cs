@@ -60,7 +60,15 @@ namespace MvcWeb
                 options.UseIdentityWithSeed<IdentitySQLServerDb>(db =>
                     db.UseSqlServer(_config.GetConnectionString("piranha")));
 #elif (UseMySql)
+                options.UseEF<MySqlDb>(db =>
+                    db.UseMySql(_config.GetConnectionString("piranha")));
+                options.UseIdentityWithSeed<IdentityMySQLDb>(db =>
+                    db.UseMySql(_config.GetConnectionString("piranha")));
 #elif (UsePostgreSql)
+                options.UseEF<PostgreSqlDb>(db =>
+                    db.UseNpgsql(_config.GetConnectionString("piranha")));
+                options.UseIdentityWithSeed<IdentityPostgreSQLDb>(db =>
+                    db.UseNpgsql(_config.GetConnectionString("piranha")));
 #else
                 options.UseEF<SQLiteDb>(db =>
                     db.UseSqlite(_config.GetConnectionString("piranha")));

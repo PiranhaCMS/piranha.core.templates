@@ -51,6 +51,11 @@
       ]
     },
 
+    "UseSQLite": {
+      "type": "computed",
+      "datatype": "bool",
+      "value": "(Database != \"SQLServer\" && Database != \"MySql\" && Database != \"PostgreSql\")"
+    },
     "UseSQLServer": {
       "type": "computed",
       "datatype": "bool",
