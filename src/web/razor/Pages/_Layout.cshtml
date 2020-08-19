@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Raleway:wght@700&display=swap">
     <link rel="stylesheet" href="~/assets/css/style.min.css" asp-append-version="true">
+
+    @RenderSection("head", required: false)
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="~/">Piranha CMS <small>8.3.0</small></a>
+            <a class="navbar-brand" href="~/">Piranha CMS <small>8.4</small></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,7 +24,7 @@
                     @foreach (var item in WebApp.Site.Sitemap.Where(i => !i.IsHidden))
                     {
                     <li class="nav-item@(item.Id == WebApp.PageId || item.HasChild(WebApp.PageId) ? " active" : "")">
-                        <a class="nav-link" href="@item.Permalink">@item.MenuTitle</a>
+                        <a class="nav-link" href="@WebApp.Url(item)">@item.MenuTitle</a>
                     </li>
                     }
                 </ul>

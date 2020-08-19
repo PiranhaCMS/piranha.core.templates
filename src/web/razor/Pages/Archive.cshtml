@@ -1,10 +1,13 @@
 @page
 @model ArchivePage<StandardArchive, Piranha.Models.PostInfo>
 @{
-    ViewData["Title"] = Model.Data.Title;
+    ViewData["Title"] = !string.IsNullOrEmpty(Model.Data.MetaTitle) ? Model.Data.MetaTitle : Model.Data.Title;
     var hasImage = Model.Data.PrimaryImage.HasValue;
 
     var posts = Model.Archive.Posts.Count;
+}
+@section head {
+    @WebApp.MetaTags(Model.Data)
 }
 
 <header @(hasImage ? "class=has-image" : "") @(hasImage ? $"style=background-image:url({ @Url.Content(WebApp.Media.ResizeImage(Model.Data.PrimaryImage, 1920, 400)) })" : "")>

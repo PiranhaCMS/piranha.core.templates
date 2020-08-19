@@ -1,7 +1,10 @@
 @model StandardPage
 @{
-    ViewData["Title"] = Model.Title;
+    ViewData["Title"] = !string.IsNullOrEmpty(Model.MetaTitle) ? Model.MetaTitle : Model.Title;
     var hasImage = Model.PrimaryImage.HasValue;
+}
+@section head {
+    @WebApp.MetaTags(Model)
 }
 
 <header @(hasImage ? "class=has-image" : "") @(hasImage ? $"style=background-image:url({ @Url.Content(WebApp.Media.ResizeImage(Model.PrimaryImage, 1920, 400)) })" : "")>

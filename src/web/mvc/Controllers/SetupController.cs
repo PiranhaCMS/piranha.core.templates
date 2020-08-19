@@ -96,6 +96,7 @@ namespace MvcWeb.Controllers
             startPage.SiteId = site.Id;
             startPage.Title = "Welcome To Piranha CMS";
             startPage.NavigationTitle = "Home";
+            startPage.MetaTitle = "Piranha CMS - Open Source, Cross Platform ASP.NET Core CMS";
             startPage.MetaKeywords = "Purus, Amet, Ullamcorper, Fusce";
             startPage.MetaDescription = "Integer posuere erat a ante venenatis dapibus posuere velit aliquet.";
             startPage.PrimaryImage = images["cute-business-kids-working-on-project-together-surfing-3874121.jpg"];
@@ -222,17 +223,17 @@ namespace MvcWeb.Controllers
             post3.BlogId = blogPage.Id;
             post3.Category = "Piranha";
             post3.Tags.Add("Development", "Release Info");
-            post3.Title = "What's New In 8.3";
+            post3.Title = "What's New In 8.4";
             post3.MetaKeywords = "Nibh, Vulputate, Venenatis, Ridiculus";
             post3.MetaDescription = "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum.";
             post3.PrimaryImage = images["bird-s-eye-view-photography-of-lighted-city-3573383.jpg"];
-            post3.Excerpt = "For this release we've put our focus on bugfixes and functionality that has been requested by our users to increase productivity in development projects.";
+            post3.Excerpt = "As this will be our last minor release for version 8 we have focused on bugfixes and requests from our users to increase productivity.";
             post3.Published = DateTime.Now;
 
             post3.Blocks.Add(new HtmlBlock
             {
                 Body =
-                    "<p class=\"lead\">Please note that if you have implemented a custom <code>IStorage</code> service in your application you will need to upgrade it as the interfaces have been updated for issues #1124.</p>"
+                    "<p class=\"lead\">Big thanks to <a href=\"https://github.com/mikaellindemann\">@mikaellindemann</a> and <a href=\"https://github.com/Urreman\">@Urreman</a> for their contributions and all of the people who has helped with translating the manager.</p>"
             });
             post3.Blocks.Add(new ColumnBlock
             {
@@ -243,34 +244,34 @@ namespace MvcWeb.Controllers
                         Body =
                             "<h4>Core</h4>" +
                             "<ul>" +
-                            "  <li>Make sure empty slugs are not generated (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/566\" target=\"_blank\">#566</a>)</li>" +
-                            "  <li>Optional Authentication in REST API (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/841\" target=\"_blank\">#841</a>)</li>" +
-                            "  <li>Add author to QuoteBlock (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1037\" target=\"_blank\">#1037</a>)</li>" +
-                            "  <li>Option to Remove GUID from filename in media uploads (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1124\" target=\"_blank\">#1124</a>)</li>" +
-                            "  <li>Add SourceLink (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1153\" target=\"_blank\">#1153</a>)</li>" +
-                            "  <li>Automatically clean media filenames (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1156\" target=\"_blank\">#1156</a>)</li>" +
-                            "  <li>Add RazorPage model for Archive Pages (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1167\" target=\"_blank\">#1167</a>)</li>" +
-                            "  <li>Add PrimaryImage and Excerpt to Pages as well (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1175\" target=\"_blank\">#1175</a>)</li>" +
-                            "  <li>Add PageLink block (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1179\" target=\"_blank\">#1179</a>)</li>" +
-                            "  <li>Add PostLink block (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1180\" target=\"_blank\">#1180</a>)</li>" +
-                            "  <li>Add preferred image aspect for ImageBlock (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1191\" target=\"_blank\">#1191</a>)</li>" +
+                            "  <li>SelectField for external data source <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1186\">#1186</a></li>" +
+                            "  <li>Improve SEO features <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1218\">#1218</a></li>" +
+                            "  <li>Add Sitemap model hooks <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1231\">#1231</a></li>" +
+                            "  <li>Add helper for generating URL's given the current requests. <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1235\">#1235</a></li>" +
+                            "  <li>Add meta-information to Site <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1240\">#1240</a></li>" +
+                            "  <li>Automatically add / for content type routes <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1245\">#1245</a></li>" +
+                            "  <li>Simplify authentication in the web application <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1259\">#1259</a></li>" +
+                            "  <li>Add helper method for filtering the sitemap for the current user <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1262\">#1262</a></li>" +
                             "</ul>" +
                             "<h4>Manager</h4>" +
                             "<ul>" +
-                            "  <li>Excerpt as HTML (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1150\" target=\"_blank\">#1150</a>)</li>" +
-                            "  <li>Support TinyMCE extended_valid_elements (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1154\" target=\"_blank\">#1154</a>)</li>" +
-                            "  <li>Perform a Sign Out before Signing In to the manager (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1159\" target=\"_blank\">#1159</a>)</li>" +
-                            "  <li>Move &amp; delete multiple media files in the manager (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1174\" target=\"_blank\">#1174</a>)</li>" +
-                            "  <li>Media data not serialized for Mediafield (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1183\" target=\"_blank\">#1183</a>)</li>" +
+                            "  <li>Make last opened folder in media-picker filter sensitive <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1248\">#1248</a></li>" +
+                            "  <li>Expand new list-region items if collapsible <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1249\">#1249</a></li>" +
+                            "  <li>Add information text on empty archives <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1253\">#1253</a></li>" +
+                            "  <li>Add icon in sitemap to visualize authenticated pages <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1266\">#1266</a></li>" +
                             "</ul>" +
                             "<h4>Bugfixes</h4>" +
                             "<ul>" +
-                            "  <li>Fix 404 when fetching empty-image.png from wrong path. (<a href=\"https://github.com/PiranhaCMS/piranha.core/pull/1177\" target=\"_blank\">#1177</a>)</li>" +
-                            "  <li>Unable to move post blocks (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1178\" target=\"_blank\">#1178</a>)</li>" +
-                            "  <li>Cannot remove missing permissions from post/page (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1182\" target=\"_blank\">#1182</a>)</li>" +
-                            "  <li>Urls in sitemap doesn't consider prefixes (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1083\" target=\"_blank\">#1083</a>)</li>" +
-                            "  <li>Uploaded media is not cleared from the mediapicker (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1189\" target=\"_blank\">#1189</a>)</li>" +
-                            "  <li>Multiple HtmlString results in TinyMCE not loading (<a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1203\" target=\"_blank\">#1203</a>)</li>" +
+                            "  <li>Region ListExpand should be false by default <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1232\">#1232</a></li>" +
+                            "  <li>Post routing for sites with a prefix not working properly <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1234\">#1234</a></li>" +
+                            "  <li>Use Request Hostname as Host if the current site has no host specified <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1239\">#1239</a></li>" +
+                            "  <li>GenericBlock not updating item title in the manager <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1246\">#1246</a></li>" +
+                            "  <li>StringField and SelectField not updating item title in manager <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1247\">#1247</a></li>" +
+                            "  <li>WebApi permissions should be internal <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1255\">#1255</a></li>" +
+                            "  <li>IntegratedMiddleware throws when Piranha is hosted in a Virtual Directory <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1273\">#1273</a></li>" +
+                            "  <li>Media Manager thumb error with no ImageProcessor <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1288\">#1288</a></li>" +
+                            "  <li>Cannot add Video Block <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1292\">#1292</a></li>" +
+                            "  <li>Module icons causes mixed content errors <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1304\">#1304</a></li>" +
                             "</ul>"
                     },
                     new ImageBlock
