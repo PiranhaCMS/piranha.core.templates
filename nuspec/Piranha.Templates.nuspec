@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>Piranha.Templates</id>
-    <version>8.3.3</version>
+    <version>8.4.0</version>
     <title>Piranha CMS Templates</title>
     <authors>Piranha CMS</authors>
     <owners>Piranha CMS</owners>
