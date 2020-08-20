@@ -6,7 +6,7 @@
         @if (Model.Body.Page.PrimaryImage.HasValue)
         {
             <a href="@WebApp.Url(Model)">
-                <img class="card-img-top" src="@WebApp.Url(WebApp.Media.ResizeImage(Model.Body.Page.PrimaryImage, 540, 200))">
+                <img class="card-img-top" src="@Url.Content(WebApp.Media.ResizeImage(Model.Body.Page.PrimaryImage, 540, 200))">
             </a>
         }
         <div class="card-body">

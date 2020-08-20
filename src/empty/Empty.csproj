@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Piranha" Version="8.4.1" />
+    <PackageReference Include="Piranha" Version="8.4.2" />
+    <PackageReference Include="Piranha.AspNetCore" Version="8.4.1" />
     <PackageReference Condition="$(UseSQLite) != False" Include="Piranha.AspNetCore.Identity.SQLite" Version="8.4.0" />
     <PackageReference Condition="$(UseSQLServer) == True" Include="Piranha.AspNetCore.Identity.SQLServer" Version="8.4.0" />
     <PackageReference Condition="$(UseMySql) == True" Include="Piranha.AspNetCore.Identity.MySql" Version="8.4.0" />
