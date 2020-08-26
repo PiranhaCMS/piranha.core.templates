@@ -75,6 +75,16 @@ namespace RazorWeb
                 options.UseIdentityWithSeed<IdentitySQLiteDb>(db =>
                     db.UseSqlite(_config.GetConnectionString("piranha")));
 #endif
+
+                /***
+                 * Here you can configure the different permissions
+                 * that you want to use for securing content in the
+                 * application.
+                options.UseSecurity(o =>
+                {
+                    o.UsePermission("WebUser", "Web User");
+                });
+                 */
             });
         }
 
