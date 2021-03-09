@@ -74,7 +74,7 @@ namespace Empty
                     db.UseSqlite(_config.GetConnectionString("piranha")));
 #endif
 
-                /***
+                /**
                  * Here you can configure the different permissions
                  * that you want to use for securing content in the
                  * application.
@@ -82,6 +82,13 @@ namespace Empty
                 {
                     o.UsePermission("WebUser", "Web User");
                 });
+                 */
+
+                /**
+                 * Here you can specify the login url for the front end
+                 * application. This does not affect the login url of
+                 * the manager interface.
+                options.LoginUrl = "login";
                  */
             });
         }

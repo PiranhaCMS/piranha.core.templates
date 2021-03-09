@@ -14,14 +14,14 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="~/">Piranha CMS <small>8.4</small></a>
+            <a class="navbar-brand" href="~/">Piranha CMS <small>9.0</small></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
-                    @foreach (var item in WebApp.Site.Sitemap.Where(i => !i.IsHidden))
+                    @foreach (var item in (await WebApp.Site.Sitemap.ForUserAsync(User, Auth)).Where(i => !i.IsHidden))
                     {
                     <li class="nav-item@(item.Id == WebApp.PageId || item.HasChild(WebApp.PageId) ? " active" : "")">
                         <a class="nav-link" href="@WebApp.Url(item)">@item.MenuTitle</a>

@@ -223,17 +223,17 @@ namespace RazorWeb.Controllers
             post3.BlogId = blogPage.Id;
             post3.Category = "Piranha";
             post3.Tags.Add("Development", "Release Info");
-            post3.Title = "What's New In 8.4";
-            post3.MetaKeywords = "Nibh, Vulputate, Venenatis, Ridiculus";
-            post3.MetaDescription = "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum.";
+            post3.Title = "What's New In 9";
+            post3.MetaKeywords = "Piranha, Version, Information";
+            post3.MetaDescription = "Here you can find information about what's included in the current release.";
             post3.PrimaryImage = images["bird-s-eye-view-photography-of-lighted-city-3573383.jpg"];
-            post3.Excerpt = "As this will be our last minor release for version 8 we have focused on bugfixes and requests from our users to increase productivity.";
+            post3.Excerpt = "Here you can find information about what's included in the current release.";
             post3.Published = DateTime.Now;
 
             post3.Blocks.Add(new HtmlBlock
             {
                 Body =
-                    "<p class=\"lead\">Big thanks to <a href=\"https://github.com/mikaellindemann\">@mikaellindemann</a> and <a href=\"https://github.com/Urreman\">@Urreman</a> for their contributions and all of the people who has helped with translating the manager.</p>"
+                    "<p class=\"lead\">Big thanks to <a href=\"https://github.com/mikaellindemann\">@axunonb</a>, <a href=\"https://github.com/mikaellindemann\">@eferfolja</a>, <a href=\"https://github.com/mikaellindemann\">@FelipePergher</a>, <a href=\"https://github.com/mikaellindemann\">@jensbrak</a>, <a href=\"https://github.com/mikaellindemann\">@jfaquinojr</a>, <a href=\"https://github.com/mikaellindemann\">@MehranDHN</a>, <a href=\"https://github.com/mikaellindemann\">@raziee</a> and <a href=\"https://github.com/mikaellindemann\">@tfritzke</a> for their contributions and all of the people who has helped with translating the manager.</p>"
             });
             post3.Blocks.Add(new ColumnBlock
             {
@@ -244,34 +244,50 @@ namespace RazorWeb.Controllers
                         Body =
                             "<h4>Core</h4>" +
                             "<ul>" +
-                            "  <li>SelectField for external data source <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1186\">#1186</a></li>" +
-                            "  <li>Improve SEO features <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1218\">#1218</a></li>" +
-                            "  <li>Add Sitemap model hooks <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1231\">#1231</a></li>" +
-                            "  <li>Add helper for generating URL's given the current requests. <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1235\">#1235</a></li>" +
-                            "  <li>Add meta-information to Site <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1240\">#1240</a></li>" +
-                            "  <li>Automatically add / for content type routes <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1245\">#1245</a></li>" +
-                            "  <li>Simplify authentication in the web application <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1259\">#1259</a></li>" +
-                            "  <li>Add helper method for filtering the sitemap for the current user <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1262\">#1262</a></li>" +
+                            "  <li>Add Index, NoIndex and Follow to page/post settings <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1000\">#1000</a></li>" +
+                            "  <li>Add possibility to set configuration on Regions & Fields <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1233\">#1233</a></li>" +
+                            "  <li>Add ColorField <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1302\">#1302</a></li>" +
+                            "  <li>Specify allowed blocks by content type <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1318\">#1318</a></li>" +
+                            "  <li>Update package dependencies <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1319\">#1319</a></li>" +
+                            "  <li>Drop old application setup extension methods <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1323\">#1323</a></li>" +
+                            "  <li>Provide generic content structure <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1335\">#1335</a></li>" +
+                            "  <li>Add NewtonSoft SerializerSettings globally in startup when PiranhaManager is present <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1354\">#1354</a></li>" +
+                            "  <li>Upgrade to .NET 5 <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1400\">#1400</a></li>" +
+                            "  <li>Add support for connection pooling <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1428\">#1428</a></li>" +
+                            "  <li>Add null checks in IMediaHelper for deleted images <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1462\">#1462</a></li>" +
+                            "  <li>Culture specific characters for Slovenian <a href=\"https://github.com/PiranhaCMS/piranha.core/pull/1479\">#1479</a></li>" +
+                            "  <li>Unescaped hash \"#\" in media filename <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1478\">#1478</a></li>" +
+                            "  <li>Warning messages from EF Core <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1490\">#1490</a></li>" +
+                            "  <li>Add hooks for content <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1511\">#1511</a></li>" +
+                            "  <li>Add pt-BR special characters to slugs <a href=\"https://github.com/PiranhaCMS/piranha.core/pull/1520\">#1520</a></li>" +
+                            "  <li>ifferentiate models for page & post comments <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1525\">#1525</a></li>" +
                             "</ul>" +
                             "<h4>Manager</h4>" +
                             "<ul>" +
-                            "  <li>Make last opened folder in media-picker filter sensitive <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1248\">#1248</a></li>" +
-                            "  <li>Expand new list-region items if collapsible <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1249\">#1249</a></li>" +
-                            "  <li>Add information text on empty archives <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1253\">#1253</a></li>" +
-                            "  <li>Add icon in sitemap to visualize authenticated pages <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1266\">#1266</a></li>" +
+                            "  <li>PrimaryImage & Excerpt taking too much space <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1290\">#1290</a></li>" +
+                            "  <li>Route update in manager for .NET 5 <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1324\">#1324</a></li>" +
+                            "  <li>Indesired elements with TinyMCE 5.0.3 <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1379\">#1379</a></li>" +
+                            "  <li>Upgrade to TinyMCE 5.6.2 <a href=\"https://github.com/PiranhaCMS/piranha.core/pull/1427\">#1427</a></li>" +
+                            "  <li>Add RTL Layout support <a href=\"https://github.com/PiranhaCMS/piranha.core/pull/1449\">#1449</a></li>" +
+                            "  <li>Add quick buttons in manager to expand/collapse all pages in all sitemaps <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1460\">#1460</a></li>" +
+                            "  <li>Config option for outlining blocks in the manager <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1489\">#1489</a></li>" +
+                            "  <li>Add support for editor width on regions and blocks <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1514\">#1514</a></li>" +
                             "</ul>" +
                             "<h4>Bugfixes</h4>" +
                             "<ul>" +
-                            "  <li>Region ListExpand should be false by default <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1232\">#1232</a></li>" +
-                            "  <li>Post routing for sites with a prefix not working properly <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1234\">#1234</a></li>" +
-                            "  <li>Use Request Hostname as Host if the current site has no host specified <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1239\">#1239</a></li>" +
-                            "  <li>GenericBlock not updating item title in the manager <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1246\">#1246</a></li>" +
-                            "  <li>StringField and SelectField not updating item title in manager <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1247\">#1247</a></li>" +
-                            "  <li>WebApi permissions should be internal <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1255\">#1255</a></li>" +
-                            "  <li>IntegratedMiddleware throws when Piranha is hosted in a Virtual Directory <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1273\">#1273</a></li>" +
-                            "  <li>Media Manager thumb error with no ImageProcessor <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1288\">#1288</a></li>" +
-                            "  <li>Cannot add Video Block <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1292\">#1292</a></li>" +
-                            "  <li>Module icons causes mixed content errors <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1304\">#1304</a></li>" +
+                            "  <li>ContentId of Comments not set in OnAfterSave hook <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1338\">#1338</a></li>" +
+                            "  <li>CommentCount should only look at approved comments <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1346\">#1346</a></li>" +
+                            "  <li>OnValidate hook not properly attached <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1347\">#1347</a></li>" +
+                            "  <li>Duplicate slugs give an internal server error. <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1369\">#1369</a></li>" +
+                            "  <li>Update Open Graph tag rendering <a href=\"https://github.com/PiranhaCMS/piranha.core/pull/1373\">#1373</a></li>" +
+                            "  <li>Dragging media folder into itself make it disappear <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1409\">#1409</a></li>" +
+                            "  <li>Unable to clear Post tags <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1411\">#1411</a></li>" +
+                            "  <li>InitManager isn't called for fields in blocks <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1142014\">#1420</a></li>" +
+                            "  <li>Meta-tags are render incorrectly <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1421\">#1421</a></li>" +
+                            "  <li>When creating new Site, the Language doesn't load the Default language. <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1429\">#1429</a></li>" +
+                            "  <li>MarkdownField not working properly in List Region <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1486\">#1486</a></li>" +
+                            "  <li>Custom view/component for BlockGroup is not supported in the current state of ContentTypeService <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1498\">#1498</a></li>" +
+                            "  <li>Select2 and remote data throwing error, jQuery slim doesn't include ajax(). <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1506\">#1506</a></li>" +
                             "</ul>"
                     },
                     new ImageBlock
@@ -283,7 +299,7 @@ namespace RazorWeb.Controllers
 
             await _api.Posts.SaveAsync(post3);
 
-            var comment = new Piranha.Models.Comment
+            var comment = new Piranha.Models.PostComment
             {
                 Author = "Håkan Edling",
                 Email = "hakan@tidyui.com",

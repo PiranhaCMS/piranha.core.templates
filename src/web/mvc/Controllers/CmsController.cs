@@ -109,7 +109,7 @@ namespace MvcWeb.Controllers
                 var model = await _loader.GetPostAsync<StandardPost>(commentModel.Id, HttpContext.User);
 
                 // Create the comment
-                var comment = new Comment
+                var comment = new PostComment
                 {
                     IpAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
                     UserAgent = Request.Headers.ContainsKey("User-Agent") ? Request.Headers["User-Agent"].ToString() : "",

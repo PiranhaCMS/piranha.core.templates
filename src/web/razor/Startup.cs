@@ -43,6 +43,12 @@ namespace RazorWeb
             // Service setup
             services.AddPiranha(options =>
             {
+                /**
+                 * This will enable automatic reload of .cshtml
+                 * without restarting the application. However since
+                 * this adds a slight overhead it should not be
+                 * enabled in production.
+                 */
                 options.AddRazorRuntimeCompilation = true;
 
 #if (UseBlobStorage)
@@ -76,7 +82,7 @@ namespace RazorWeb
                     db.UseSqlite(_config.GetConnectionString("piranha")));
 #endif
 
-                /***
+                /**
                  * Here you can configure the different permissions
                  * that you want to use for securing content in the
                  * application.
@@ -84,6 +90,13 @@ namespace RazorWeb
                 {
                     o.UsePermission("WebUser", "Web User");
                 });
+                 */
+
+                /**
+                 * Here you can specify the login url for the front end
+                 * application. This does not affect the login url of
+                 * the manager interface.
+                options.LoginUrl = "login";
                  */
             });
         }
