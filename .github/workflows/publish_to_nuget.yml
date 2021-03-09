@@ -20,10 +20,6 @@ jobs:
       env:
         NUGET_AUTH_TOKEN: ${{secrets.NugetAuthToken}}
 
-    # Setup Nuget.exe
-    - name: Setup NuGet.exe for use with actions
-      uses: NuGet/setup-nuget@v1.0.2
-
     # Build and pack
     - name: Build solution and generate NuGet package
       run: ./pack.sh
