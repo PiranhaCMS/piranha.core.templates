@@ -44,7 +44,7 @@ namespace Empty
             services.AddPiranha(options =>
             {
 #if (UseBlobStorage)
-                options.UseBlobStorage(_config.GetConnectionString("blobstorage"));
+                options.UseBlobStorage(_config.GetConnectionString("blobstorage"), naming: Piranha.Azure.BlobStorageNaming.UniqueFolderNames);
 #else
                 options.UseFileStorage(naming: Piranha.Local.FileStorageNaming.UniqueFolderNames);
 #endif
