@@ -223,7 +223,7 @@ namespace MvcWeb.Controllers
             post3.BlogId = blogPage.Id;
             post3.Category = "Piranha";
             post3.Tags.Add("Development", "Release Info");
-            post3.Title = "What's New In 9.1";
+            post3.Title = "What's New In 9.2";
             post3.Slug = "whats-new";
             post3.MetaKeywords = "Piranha, Version, Information";
             post3.MetaDescription = "Here you can find information about what's included in the current release.";
@@ -234,7 +234,7 @@ namespace MvcWeb.Controllers
             post3.Blocks.Add(new HtmlBlock
             {
                 Body =
-                    "<p class=\"lead\">Big thanks to <a href=\"https://github.com/axunonb\">@axunonb</a>, <a href=\"https://github.com/BRiley01\">@BRiley01</a> and <a href=\"https://github.com/tedvanderveen\">@tedvanderveen</a> for their contributions and all of the people who has helped with translating the manager.</p>"
+                    "<p class=\"lead\">Big thanks to <a href=\"https://github.com/gmullernh\">@gmullernh</a> and <a href=\"https://github.com/tedvanderveen\">@tedvanderveen</a> for their contributions and all of the people who has helped with translating the manager.</p>"
             });
             post3.Blocks.Add(new ColumnBlock
             {
@@ -245,33 +245,19 @@ namespace MvcWeb.Controllers
                         Body =
                             "<h4>Core</h4>" +
                             "<ul>" +
-                            "  <li>Add Init() method to Blocks <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/837\">#837</a></li>" +
-                            "  <li>Add default support for most common media formats. <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1359\">#1359</a></li>" +
-                            "  <li>Add blocks to generic content <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1562\">#1562</a></li>" +
-                            "  <li>Add taxonomies to generic content <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1563\">#1563</a></li>" +
-                            "  <li>Remove reflection from model initialization <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1576\">#1576</a></li>" +
-                            "  <li>Add LastModified to ContentTranslation <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1589\">#1589</a></li>" +
+                            "  <li>Add current site language to ApplicationHelper <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1703\">#1703</a></li>" +
                             "</ul>" +
-                            "<h4>Manager</h4>" +
+                            "<h4>Identity</h4>" +
                             "<ul>" +
-                            "  <li>Possibility to hide auto-generated menu items for generic content groups. <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1567\">#1567</a></li>" +
-                            "  <li>Add visual indication for scheduled pages <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1581\">#1581</a></li>" +
-                            "  <li>Flag field´s that inherit ITranslatable <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1583\">#1583</a></li>" +
-                            "  <li>Improve support for integrating with external identity providers <a href=\"https://github.com/PiranhaCMS/piranha.core/pull/1623\">#1623</a></li>" +
+                            "  <li>Add support for custom Piranha Manager authorization policy requirements <a href=\"https://github.com/PiranhaCMS/piranha.core/pull/1692\">#1692</a></li>" +
+                            "  <li>Delete user should not be a GET request <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1725\">#1725</a></li>" +
+                            "  <li>User edit URL is incorrect <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1709\">#1709</a></li>" +
                             "</ul>" +
                             "<h4>Bugfixes</h4>" +
                             "<ul>" +
-                            "  <li>Text block issues <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1566\">#1566</a></li>" +
-                            "  <li>Swashbuckle Endpoint Throws Exception <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1574\">#1574</a></li>" +
-                            "  <li>ContentFieldSettingsAttribute has no effect in content editor <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1578\">#1578</a></li>" +
-                            "  <li>Media count not being display in media list view <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1579\">#1579</a></li>" +
-                            "  <li>Drafts does not work for scheduled pages or posts <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1582\">#1582</a></li>" +
-                            "  <li>Published datetime not parsed correctly on server side for pages. <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1584\">#1584</a></li>" +
-                            "  <li>Possible to register blocks that doesn't inherit Piranha.Extend.Block <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1587\">#1587</a></li>" +
-                            "  <li>Sitemap.xml has no base uri prefix for absolute permalink uri <a href=\"https://github.com/PiranhaCMS/piranha.core/pull/1599\">#1599</a></li>" +
-                            "  <li>Check for SitemapItem.MetaIndex <a href=\"https://github.com/PiranhaCMS/piranha.core/pull/1600\">#1600</a></li>" +
-                            "  <li>BlockType filtering doesn't work for posts <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1633\">#1633</a></li>" +
-                            "  <li>Fixed incorrect policy check on UserController.cs delete <a href=\"https://github.com/PiranhaCMS/piranha.core/pull/1645\">#1645</a></li>" +
+                            "  <li>Primary Image & Excerpt should be read-only for copied pages <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1644\">#1644</a></li>" +
+                            "  <li>Add languageId to ContentService.GetAllAsync() <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1702\">#1702</a></li>" +
+                            "  <li>Bug in route parameter name in manager ContentEdit <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1715\">#1715</a></li>" +
                             "</ul>"
                     },
                     new ImageBlock
