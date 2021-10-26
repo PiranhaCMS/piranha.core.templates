@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>Piranha.Templates</id>
-    <version>9.2.0</version>
+    <version>10.0.0-alpha1</version>
     <title>Piranha CMS Templates</title>
     <authors>Piranha CMS</authors>
     <owners>Piranha CMS</owners>
@@ -18,10 +18,10 @@
     <description>Piranha CMS Templates</description>
     <releaseNotes>
       See the changelog available at:
-      https://github.com/piranhacms/piranha.core/wiki/changelog
+      https://github.com/piranhacms/piranha.core.templates/releases
     </releaseNotes>
     <copyright>Copyright (c) .NET Foundation and Contributors</copyright>
-    <tags>cms mvc aspnetcore netstandard</tags>
+    <tags>cms mvc razorpages aspnetcore netstandard</tags>
   </metadata>
   <files>
     <file src="piranha.png" target="images\" />

@@ -51,35 +51,33 @@ namespace MvcWeb
                  */
                 options.AddRazorRuntimeCompilation = true;
 
+                options.UseCms();
+                options.UseManager();
+                
 #if (UseBlobStorage)
                 options.UseBlobStorage(_config.GetConnectionString("blobstorage"), naming: Piranha.Azure.BlobStorageNaming.UniqueFolderNames);
 #else
                 options.UseFileStorage(naming: Piranha.Local.FileStorageNaming.UniqueFolderNames);
 #endif
                 options.UseImageSharp();
-                options.UseManager();
                 options.UseTinyMCE();
                 options.UseMemoryCache();
+
+                var connectionString = _config.GetConnectionString("piranha");
 #if (UseSQLServer)
-                options.UseEF<SQLServerDb>(db =>
-                    db.UseSqlServer(_config.GetConnectionString("piranha")));
-                options.UseIdentityWithSeed<IdentitySQLServerDb>(db =>
-                    db.UseSqlServer(_config.GetConnectionString("piranha")));
+                options.UseEF<SQLServerDb>(db => db.UseSqlServer(connectionString));
+                options.UseIdentityWithSeed<IdentitySQLServerDb>(db => db.UseSqlServer(connectionString));
 #elif (UseMySql)
                 options.UseEF<MySqlDb>(db =>
-                    db.UseMySql(_config.GetConnectionString("piranha")));
+                    db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
                 options.UseIdentityWithSeed<IdentityMySQLDb>(db =>
-                    db.UseMySql(_config.GetConnectionString("piranha")));
+                    db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 #elif (UsePostgreSql)
-                options.UseEF<PostgreSqlDb>(db =>
-                    db.UseNpgsql(_config.GetConnectionString("piranha")));
-                options.UseIdentityWithSeed<IdentityPostgreSQLDb>(db =>
-                    db.UseNpgsql(_config.GetConnectionString("piranha")));
+                options.UseEF<PostgreSqlDb>(db => db.UseNpgsql(connectionString));
+                options.UseIdentityWithSeed<IdentityPostgreSQLDb>(db => db.UseNpgsql(connectionString));
 #else
-                options.UseEF<SQLiteDb>(db =>
-                    db.UseSqlite(_config.GetConnectionString("piranha")));
-                options.UseIdentityWithSeed<IdentitySQLiteDb>(db =>
-                    db.UseSqlite(_config.GetConnectionString("piranha")));
+                options.UseEF<SQLiteDb>(db => db.UseSqlite(connectionString));
+                options.UseIdentityWithSeed<IdentitySQLiteDb>(db => db.UseSqlite(connectionString));
 #endif
 
                 /**

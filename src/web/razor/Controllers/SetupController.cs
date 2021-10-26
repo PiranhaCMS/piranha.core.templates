@@ -223,7 +223,7 @@ namespace RazorWeb.Controllers
             post3.BlogId = blogPage.Id;
             post3.Category = "Piranha";
             post3.Tags.Add("Development", "Release Info");
-            post3.Title = "What's New In 9.2";
+            post3.Title = "What's New In 10.0";
             post3.Slug = "whats-new";
             post3.MetaKeywords = "Piranha, Version, Information";
             post3.MetaDescription = "Here you can find information about what's included in the current release.";
@@ -233,32 +233,33 @@ namespace RazorWeb.Controllers
 
             post3.Blocks.Add(new HtmlBlock
             {
-                Body =
-                    "<p class=\"lead\">Big thanks to <a href=\"https://github.com/gmullernh\">@gmullernh</a> and <a href=\"https://github.com/tedvanderveen\">@tedvanderveen</a> for their contributions and all of the people who has helped with translating the manager.</p>"
+                Body = 
+                    "<p class=\"lead\">Please note that this is a preview version of Piranha CMS.</p>"
             });
             post3.Blocks.Add(new ColumnBlock
             {
                 Items = new List<Block>
                 {
-                    new HtmlBlock
+                    new MarkdownBlock
                     {
                         Body =
-                            "<h4>Core</h4>" +
-                            "<ul>" +
-                            "  <li>Add current site language to ApplicationHelper <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1703\">#1703</a></li>" +
-                            "</ul>" +
-                            "<h4>Identity</h4>" +
-                            "<ul>" +
-                            "  <li>Add support for custom Piranha Manager authorization policy requirements <a href=\"https://github.com/PiranhaCMS/piranha.core/pull/1692\">#1692</a></li>" +
-                            "  <li>Delete user should not be a GET request <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1725\">#1725</a></li>" +
-                            "  <li>User edit URL is incorrect <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1709\">#1709</a></li>" +
-                            "</ul>" +
-                            "<h4>Bugfixes</h4>" +
-                            "<ul>" +
-                            "  <li>Primary Image & Excerpt should be read-only for copied pages <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1644\">#1644</a></li>" +
-                            "  <li>Add languageId to ContentService.GetAllAsync() <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1702\">#1702</a></li>" +
-                            "  <li>Bug in route parameter name in manager ContentEdit <a href=\"https://github.com/PiranhaCMS/piranha.core/issues/1715\">#1715</a></li>" +
-                            "</ul>"
+                            "#### Core\n\n" +
+                            "* Remove the need to use MARS for SQL Server [#1417](https://github.com/piranhacms/piranha.core/issues/1417)\n" +
+                            "* Detect EXIF orientation on mobile pictures [#1442](https://github.com/piranhacms/piranha.core/issues/1442)\n" +
+                            "* Update BlobStorage to use Azure.Storage.Blobs [#1564](https://github.com/piranhacms/piranha.core/pull/1564)\n" +
+                            "* Update Pomelo.EntityFrameworkCore.MySql [#1646](https://github.com/piranhacms/piranha.core/pull/1646)\n" +
+                            "* Add sort order to fields [#1732](https://github.com/piranhacms/piranha.core/issues/1732)\n" +
+                            "* Update to .NET 6 [#1733](https://github.com/piranhacms/piranha.core/issues/1733)\n" +
+                            "* Use Identify to get image width and height [#1734](https://github.com/piranhacms/piranha.core/pull/1734)\n" +
+                            "* Clean up application startup [#1738](https://github.com/piranhacms/piranha.core/issues/1738)\n" +
+                            "* Add markdown block [#1744](https://github.com/piranhacms/piranha.core/issues/1744)\n\n" +
+                            "#### Manager\n\n" +
+                            "* Add content settings (with region support) [#1524](https://github.com/piranhacms/piranha.core/issues/1524)\n" +
+                            "* Update Summernote package [#1730](https://github.com/piranhacms/piranha.core/issues/1730)\n" +
+                            "* Manager security update [#1741](https://github.com/piranhacms/piranha.core/issues/1741)\n\n" +
+                            "#### Bugfixes\n\n" +
+                            "* Cannot access disposed object [#1701](https://github.com/piranhacms/piranha.core/issues/1701)\n" +
+                            "* Invalid PageField URL in Manager [#1705](https://github.com/piranhacms/piranha.core/issues/1705)\n"
                     },
                     new ImageBlock
                     {
