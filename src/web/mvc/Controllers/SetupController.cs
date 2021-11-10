@@ -234,7 +234,7 @@ namespace MvcWeb.Controllers
             post3.Blocks.Add(new HtmlBlock
             {
                 Body = 
-                    "<p class=\"lead\">Please note that this is a preview version of Piranha CMS.</p>"
+                    "<p class=\"lead\">Big thanks to [@aatmmr](https://github.com/aatmmr), [@brianpopow](https://github.com/brianpopow) and [@tedvanderveen](https://github.com/tedvanderveen) for their contributions and all of the people who has helped with translating the manager.</p>"
             });
             post3.Blocks.Add(new ColumnBlock
             {
@@ -252,11 +252,13 @@ namespace MvcWeb.Controllers
                             "* Update to .NET 6 [#1733](https://github.com/piranhacms/piranha.core/issues/1733)\n" +
                             "* Use Identify to get image width and height [#1734](https://github.com/piranhacms/piranha.core/pull/1734)\n" +
                             "* Clean up application startup [#1738](https://github.com/piranhacms/piranha.core/issues/1738)\n" +
-                            "* Add markdown block [#1744](https://github.com/piranhacms/piranha.core/issues/1744)\n\n" +
+                            "* Add markdown block [#1744](https://github.com/piranhacms/piranha.core/issues/1744)\n" +
+                            "* Remove description attributes [#1747](https://github.com/piranhacms/piranha.core/issues/1747)\n\n" +
                             "#### Manager\n\n" +
                             "* Add content settings (with region support) [#1524](https://github.com/piranhacms/piranha.core/issues/1524)\n" +
                             "* Update Summernote package [#1730](https://github.com/piranhacms/piranha.core/issues/1730)\n" +
-                            "* Manager security update [#1741](https://github.com/piranhacms/piranha.core/issues/1741)\n\n" +
+                            "* Manager security update [#1741](https://github.com/piranhacms/piranha.core/issues/1741)\n" +
+                            "* Redesign Add page button in manager [#1748](https://github.com/piranhacms/piranha.core/issues/1748)\n\n" +
                             "#### Bugfixes\n\n" +
                             "* Cannot access disposed object [#1701](https://github.com/piranhacms/piranha.core/issues/1701)\n" +
                             "* Invalid PageField URL in Manager [#1705](https://github.com/piranhacms/piranha.core/issues/1705)\n"
