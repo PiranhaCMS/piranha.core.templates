@@ -234,7 +234,7 @@ namespace MvcWeb.Controllers
             post3.Blocks.Add(new HtmlBlock
             {
                 Body = 
-                    "<p class=\"lead\">Big thanks to [@aatmmr](https://github.com/aatmmr), [@brianpopow](https://github.com/brianpopow) and [@tedvanderveen](https://github.com/tedvanderveen) for their contributions and all of the people who has helped with translating the manager.</p>"
+                    "<p class=\"lead\">Big thanks to <a href=\"https://github.com/aatmmr\">@aatmmr</a>, <a href=\"https://github.com/brianpopow\">@brianpopow</a> and <a href=\"https://github.com/tedvanderveen\">@tedvanderveen</a> for their contributions and all of the people who has helped with translating the manager.</p>"
             });
             post3.Blocks.Add(new ColumnBlock
             {
