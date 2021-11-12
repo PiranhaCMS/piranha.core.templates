@@ -5,10 +5,13 @@
   "identity": "Piranha.MVC.CSharp",
   "name": "ASP.NET Core MVC Web with Piranha CMS",
   "tags": {
-    "language": "C#"
+    "language": "C#",
+    "type": "project"
   },
   "shortName": "piranha.mvc",
   "sourceName": "MvcWeb",
+  "defaultName": "PiranhaMvc1",
+  "icon": "icon.png",
   "symbols": {
     "Database": {
       "type": "parameter",

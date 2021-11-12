@@ -5,10 +5,13 @@
   "identity": "Piranha.Razor.CSharp",
   "name": "ASP.NET Core Razor Pages Web with Piranha CMS",
   "tags": {
-    "language": "C#"
+    "language": "C#",
+    "type": "project"
   },
   "shortName": "piranha.razor",
   "sourceName": "RazorWeb",
+  "defaultName": "PiranhaRazor1",
+  "icon": "icon.png",
   "symbols": {
     "Database": {
       "type": "parameter",

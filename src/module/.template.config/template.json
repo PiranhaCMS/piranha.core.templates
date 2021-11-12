@@ -5,8 +5,11 @@
   "identity": "Piranha.Module.CSharp",
   "name": "ASP.NET Core Razor pages Piranha CMS Module",
   "tags": {
-    "language": "C#"
+    "language": "C#",
+    "type": "project"
   },
   "shortName": "piranha.module",
-  "sourceName": "TemplateModule"
+  "sourceName": "TemplateModule",
+  "defaultName": "PiranhaModule1",
+  "icon": "icon.png"
 }

@@ -5,10 +5,13 @@
   "identity": "Piranha.Empty.CSharp",
   "name": "ASP.NET Core Empty with Piranha CMS",
   "tags": {
-    "language": "C#"
+    "language": "C#",
+    "type": "project"
   },
   "shortName": "piranha.empty",
   "sourceName": "Empty",
+  "defaultName": "PiranhaEmpty1",
+  "icon": "icon.png",
   "symbols": {
     "Database": {
       "type": "parameter",
