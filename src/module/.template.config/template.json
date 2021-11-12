@@ -1,9 +1,10 @@
 ﻿{
   "$schema": "http://json.schemastore.org/template",
-  "author": "Håkan Edling",
+  "author": "Piranha CMS",
   "classifications": [ "Web", "CMS", "Razor" ],
   "identity": "Piranha.Module.CSharp",
-  "name": "ASP.NET Core Razor pages Piranha CMS Module",
+  "name": "Piranha Module",
+  "description": "Project template for creating a module for Piranha CMS.",
   "tags": {
     "language": "C#",
     "type": "project"

@@ -3,7 +3,8 @@
   "author": "Piranha CMS",
   "classifications": [ "Web", "CMS" ],
   "identity": "Piranha.MVC.CSharp",
-  "name": "ASP.NET Core MVC Web with Piranha CMS",
+  "name": "Piranha MVC Web App",
+  "description": "Project template for creating an ASP.NET Core application with Piranha CMS and ASP.NET MVC.",
   "tags": {
     "language": "C#",
     "type": "project"

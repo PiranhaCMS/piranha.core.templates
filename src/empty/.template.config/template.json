@@ -1,9 +1,10 @@
 ﻿{
   "$schema": "http://json.schemastore.org/template",
-  "author": "Håkan Edling",
+  "author": "Piranha CMS",
   "classifications": [ "Web", "CMS" ],
   "identity": "Piranha.Empty.CSharp",
-  "name": "ASP.NET Core Empty with Piranha CMS",
+  "name": "Piranha Empty Web App",
+  "description": "Project template for creating an empty ASP.NET Core application with Piranha CMS.",
   "tags": {
     "language": "C#",
     "type": "project"

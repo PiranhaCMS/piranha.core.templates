@@ -29,6 +29,7 @@
     <file src="..\src\empty\wwwroot\" target="content\empty\wwwroot\" />
     <file src="..\src\empty\.template.config\dotnetcli.host.json" target="content\empty\.template.config\dotnetcli.host.json" />
     <file src="..\src\empty\.template.config\template.json" target="content\empty\.template.config\template.json" />
+    <file src="..\src\empty\.template.config\icon.png" target="content\empty\.template.config\icon.png" />
     <file src="..\src\empty\Empty.csproj" target="content\empty\Empty.csproj" />
     <file src="..\src\empty\appsettings.json" target="content\empty\appsettings.json" />
     <file src="..\src\empty\editorconfig.json" target="content\empty\editorconfig.json" />
@@ -36,6 +37,7 @@
     <file src="..\src\empty\Startup.cs" target="content\empty\Startup.cs" />
 
     <file src="..\src\module\.template.config\template.json" target="content\module\.template.config\template.json" />
+    <file src="..\src\module\.template.config\icon.png" target="content\module\.template.config\icon.png" />
     <file src="..\src\module\Areas\Manager\**\*.*" target="content\module\Areas\Manager" />
     <file src="..\src\module\assets\**\*.*" target="content\module\assets" />
     <file src="..\src\module\Module.cs" target="content\module\Module.cs" />
@@ -46,6 +48,7 @@
     <file src="..\src\web\razor\wwwroot\" target="content\razorweb\wwwroot\" />
     <file src="..\src\web\razor\.template.config\dotnetcli.host.json" target="content\razorweb\.template.config\dotnetcli.host.json" />
     <file src="..\src\web\razor\.template.config\template.json" target="content\razorweb\.template.config\template.json" />
+    <file src="..\src\web\razor\.template.config\icon.png" target="content\razorweb\.template.config\icon.png" />
     <file src="..\src\web\razor\assets\**\*.*" target="content\razorweb\assets" />
     <file src="..\src\web\razor\Controllers\*.*" target="content\razorweb\Controllers" />
     <file src="..\src\web\razor\Models\**\*.*" target="content\razorweb\Models" />
@@ -67,6 +70,7 @@
     <file src="..\src\web\mvc\wwwroot\" target="content\mvcweb\wwwroot\" />
     <file src="..\src\web\mvc\.template.config\dotnetcli.host.json" target="content\mvcweb\.template.config\dotnetcli.host.json" />
     <file src="..\src\web\mvc\.template.config\template.json" target="content\mvcweb\.template.config\template.json" />
+    <file src="..\src\web\mvc\.template.config\icon.png" target="content\mvcweb\.template.config\icon.png" />
     <file src="..\src\web\mvc\assets\**\*.*" target="content\mvcweb\assets" />
     <file src="..\src\web\mvc\Controllers\*.*" target="content\mvcweb\Controllers" />
     <file src="..\src\web\mvc\Models\**\*.*" target="content\mvcweb\Models" />

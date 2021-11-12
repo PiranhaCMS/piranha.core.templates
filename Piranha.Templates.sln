@@ -1,6 +1,7 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28729.10
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A2F2EA4F-A82D-406A-92A6-DC501B49867F}"
 EndProject
@@ -10,9 +11,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateModule", "src\modul
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{32A09597-3138-496E-A382-4B71DB49ADD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcWeb", "src\web\mvc\MvcWeb.csproj", "{73AFB948-BCE4-4292-8DA4-3A70AFD52ADC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcWeb", "src\web\mvc\MvcWeb.csproj", "{73AFB948-BCE4-4292-8DA4-3A70AFD52ADC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorWeb", "src\web\razor\RazorWeb.csproj", "{074DAE03-CF76-45C3-85DA-9D783107AC78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorWeb", "src\web\razor\RazorWeb.csproj", "{074DAE03-CF76-45C3-85DA-9D783107AC78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{FE2420EB-026E-41F1-8C61-04C7BAFABC8F}"
+	ProjectSection(SolutionItems) = preProject
+		nuspec\piranha.png = nuspec\piranha.png
+		nuspec\Piranha.Templates.nuspec = nuspec\Piranha.Templates.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{B8535195-8D71-43DD-8B98-EC955AC52D0B}"
+	ProjectSection(SolutionItems) = preProject
+		build.sh = build.sh
+		pack.sh = pack.sh
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

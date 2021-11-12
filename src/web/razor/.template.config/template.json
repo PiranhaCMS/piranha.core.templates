@@ -3,7 +3,8 @@
   "author": "Piranha CMS",
   "classifications": [ "Web", "CMS" ],
   "identity": "Piranha.Razor.CSharp",
-  "name": "ASP.NET Core Razor Pages Web with Piranha CMS",
+  "name": "Piranha Razor Web App",
+  "description": "Project template for creating an ASP.NET Core application with Piranha CMS and ASP.NET Razor Pages.",
   "tags": {
     "language": "C#",
     "type": "project"
