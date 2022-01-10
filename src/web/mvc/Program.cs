@@ -85,8 +85,6 @@ var app = builder.Build();
 //    ForwardedHeaders = ForwardedHeaders.All
 //});
 
-var api = app.Services.GetService<IApi>();
-
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -98,14 +96,19 @@ else
     app.UseHsts();
 }
 
-// Initialize Piranha
-App.Init(api);
+await using (var scope = app.Services.CreateAsyncScope())
+{
+    var api = scope.ServiceProvider.GetRequiredService<IApi>();
 
-// Build content types
-new ContentTypeBuilder(api)
-    .AddAssembly(Assembly.GetExecutingAssembly())
-    .Build()
-    .DeleteOrphans();
+    // Initialize Piranha
+    App.Init(api);
+
+    // Build content types
+    await (await new ContentTypeBuilder(api)
+            .AddAssembly(Assembly.GetExecutingAssembly())
+            .BuildAsync())
+        .DeleteOrphansAsync();
+}
 
 // Configure Tiny MCE
 EditorConfig.FromFile("editorconfig.json");
