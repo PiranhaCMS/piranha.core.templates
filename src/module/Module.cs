@@ -2,9 +2,6 @@
 using Piranha.Extend;
 using Piranha.Manager;
 using Piranha.Security;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace TemplateModule
 {
