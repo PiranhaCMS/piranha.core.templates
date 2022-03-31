@@ -34,7 +34,6 @@
     <file src="..\src\empty\appsettings.json" target="content\empty\appsettings.json" />
     <file src="..\src\empty\editorconfig.json" target="content\empty\editorconfig.json" />
     <file src="..\src\empty\Program.cs" target="content\empty\Program.cs" />
-    <file src="..\src\empty\Startup.cs" target="content\empty\Startup.cs" />
 
     <file src="..\src\module\.template.config\template.json" target="content\module\.template.config\template.json" />
     <file src="..\src\module\.template.config\icon.png" target="content\module\.template.config\icon.png" />
@@ -65,7 +64,6 @@
     <file src="..\src\web\razor\gulpfile.js" target="content\razorweb\gulpfile.js" />
     <file src="..\src\web\razor\package.json" target="content\razorweb\package.json" />
     <file src="..\src\web\razor\Program.cs" target="content\razorweb\Program.cs" />
-    <file src="..\src\web\razor\Startup.cs" target="content\razorweb\Startup.cs" />
 
     <file src="..\src\web\mvc\wwwroot\" target="content\mvcweb\wwwroot\" />
     <file src="..\src\web\mvc\.template.config\dotnetcli.host.json" target="content\mvcweb\.template.config\dotnetcli.host.json" />
@@ -86,6 +84,5 @@
     <file src="..\src\web\mvc\gulpfile.js" target="content\mvcweb\gulpfile.js" />
     <file src="..\src\web\mvc\package.json" target="content\mvcweb\package.json" />
     <file src="..\src\web\mvc\Program.cs" target="content\mvcweb\Program.cs" />
-    <file src="..\src\web\mvc\Startup.cs" target="content\mvcweb\Startup.cs" />
   </files>
 </package>
