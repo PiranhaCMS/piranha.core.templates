@@ -23,6 +23,7 @@ jobs:
 
     # Build and pack
     - name: Build solution and generate NuGet package
+      uses: nuget/setup-nuget@v1
       run: ./pack.sh
 
     # Install SignClient
