@@ -21,9 +21,12 @@ jobs:
       env:
         NUGET_AUTH_TOKEN: ${{secrets.NugetAuthToken}}
 
+    # Setup Nuget
+    - name: Setup Nuget @ Latest
+      uses: nuget/setup-nuget@v1
+
     # Build and pack
     - name: Build solution and generate NuGet package
-      uses: nuget/setup-nuget@v1
       run: ./pack.sh
 
     # Install SignClient
