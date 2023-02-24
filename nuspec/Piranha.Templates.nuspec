@@ -44,7 +44,6 @@
     <file src="..\src\module\TemplateModule.csproj" target="content\module\TemplateModule.csproj" />
     <file src="..\src\module\TemplateModuleExtensions.cs" target="content\module\TemplateModuleExtensions.cs" />
 
-    <file src="..\src\web\razor\wwwroot\" target="content\razorweb\wwwroot\" />
     <file src="..\src\web\razor\.template.config\dotnetcli.host.json" target="content\razorweb\.template.config\dotnetcli.host.json" />
     <file src="..\src\web\razor\.template.config\template.json" target="content\razorweb\.template.config\template.json" />
     <file src="..\src\web\razor\.template.config\icon.png" target="content\razorweb\.template.config\icon.png" />
@@ -65,7 +64,6 @@
     <file src="..\src\web\razor\package.json" target="content\razorweb\package.json" />
     <file src="..\src\web\razor\Program.cs" target="content\razorweb\Program.cs" />
 
-    <file src="..\src\web\mvc\wwwroot\" target="content\mvcweb\wwwroot\" />
     <file src="..\src\web\mvc\.template.config\dotnetcli.host.json" target="content\mvcweb\.template.config\dotnetcli.host.json" />
     <file src="..\src\web\mvc\.template.config\template.json" target="content\mvcweb\.template.config\template.json" />
     <file src="..\src\web\mvc\.template.config\icon.png" target="content\mvcweb\.template.config\icon.png" />
