@@ -214,60 +214,6 @@ public class SetupController : Controller
         });
         await _api.Posts.SaveAsync(post2);
 
-        var post3 = await StandardPost.CreateAsync(_api);
-        post3.Id = Guid.NewGuid();
-        post3.BlogId = blogPage.Id;
-        post3.Category = "Piranha";
-        post3.Tags.Add("Development", "Release Info");
-        post3.Title = "What's New In 10.0";
-        post3.Slug = "whats-new";
-        post3.MetaKeywords = "Piranha, Version, Information";
-        post3.MetaDescription = "Here you can find information about what's included in the current release.";
-        post3.PrimaryImage = images["bird-s-eye-view-photography-of-lighted-city-3573383.jpg"];
-        post3.Excerpt = "Here you can find information about what's included in the current release.";
-        post3.Published = DateTime.Now;
-
-        post3.Blocks.Add(new HtmlBlock
-        {
-            Body =
-                "<p class=\"lead\">Big thanks to <a href=\"https://github.com/aatmmr\">@aatmmr</a>, <a href=\"https://github.com/brianpopow\">@brianpopow</a> and <a href=\"https://github.com/tedvanderveen\">@tedvanderveen</a> for their contributions and all of the people who has helped with translating the manager.</p>"
-        });
-        post3.Blocks.Add(new ColumnBlock
-        {
-            Items = new List<Block>
-            {
-                new MarkdownBlock
-                {
-                    Body =
-                        "#### Core\n\n" +
-                        "* Remove the need to use MARS for SQL Server [#1417](https://github.com/piranhacms/piranha.core/issues/1417)\n" +
-                        "* Detect EXIF orientation on mobile pictures [#1442](https://github.com/piranhacms/piranha.core/issues/1442)\n" +
-                        "* Update BlobStorage to use Azure.Storage.Blobs [#1564](https://github.com/piranhacms/piranha.core/pull/1564)\n" +
-                        "* Update Pomelo.EntityFrameworkCore.MySql [#1646](https://github.com/piranhacms/piranha.core/pull/1646)\n" +
-                        "* Add sort order to fields [#1732](https://github.com/piranhacms/piranha.core/issues/1732)\n" +
-                        "* Update to .NET 6 [#1733](https://github.com/piranhacms/piranha.core/issues/1733)\n" +
-                        "* Use Identify to get image width and height [#1734](https://github.com/piranhacms/piranha.core/pull/1734)\n" +
-                        "* Clean up application startup [#1738](https://github.com/piranhacms/piranha.core/issues/1738)\n" +
-                        "* Add markdown block [#1744](https://github.com/piranhacms/piranha.core/issues/1744)\n" +
-                        "* Remove description attributes [#1747](https://github.com/piranhacms/piranha.core/issues/1747)\n\n" +
-                        "#### Manager\n\n" +
-                        "* Add content settings (with region support) [#1524](https://github.com/piranhacms/piranha.core/issues/1524)\n" +
-                        "* Update Summernote package [#1730](https://github.com/piranhacms/piranha.core/issues/1730)\n" +
-                        "* Manager security update [#1741](https://github.com/piranhacms/piranha.core/issues/1741)\n" +
-                        "* Redesign Add page button in manager [#1748](https://github.com/piranhacms/piranha.core/issues/1748)\n\n" +
-                        "#### Bugfixes\n\n" +
-                        "* Cannot access disposed object [#1701](https://github.com/piranhacms/piranha.core/issues/1701)\n" +
-                        "* Invalid PageField URL in Manager [#1705](https://github.com/piranhacms/piranha.core/issues/1705)\n"
-                },
-                new ImageBlock
-                {
-                    Body = images["person-looking-at-phone-and-at-macbook-pro-1181244.jpg"]
-                }
-            }
-        });
-
-        await _api.Posts.SaveAsync(post3);
-
         var comment = new Piranha.Models.PostComment
         {
             Author = "Håkan Edling",
@@ -276,7 +222,7 @@ public class SetupController : Controller
             Body = "Awesome to see that the project is up and running! Now maybe it's time to start customizing it to your needs. You can find a lot of information in the official docs.",
             IsApproved = true
         };
-        await _api.Posts.SaveCommentAsync(post3.Id, comment);
+        await _api.Posts.SaveCommentAsync(post2.Id, comment);
 
         return Redirect("~/");
     }
