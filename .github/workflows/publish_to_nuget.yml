@@ -10,13 +10,13 @@ jobs:
 
     # Checkout
     - name: Checkout repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     # Setup .NET Core
     - name: Setup .NET Core @ Latest
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '6.0.x'
+        dotnet-version: '8.0.x'
         source-url: https://api.nuget.org/v3/index.json
       env:
         NUGET_AUTH_TOKEN: ${{secrets.NugetAuthToken}}
