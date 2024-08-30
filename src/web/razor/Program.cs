@@ -32,7 +32,7 @@ builder.AddPiranha(options =>
     options.UseManager();
 
 #if (UseBlobStorage)
-    options.UseBlobStorage(_config.GetConnectionString("blobstorage"), naming: Piranha.Azure.BlobStorageNaming.UniqueFolderNames);
+    options.UseBlobStorage(builder.Configuration.GetConnectionString("blobstorage"), naming: Piranha.Azure.BlobStorageNaming.UniqueFolderNames);
 #else
     options.UseFileStorage(naming: Piranha.Local.FileStorageNaming.UniqueFolderNames);
 #endif
