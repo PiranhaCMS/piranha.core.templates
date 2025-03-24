@@ -21,6 +21,12 @@ jobs:
       env:
         NUGET_AUTH_TOKEN: ${{secrets.NugetAuthToken}}
 
+    # Setup Nuget
+    - name: Setup Nuget 6.x
+      uses: nuget/setup-nuget@v1
+      with:
+        nuget-version: '6.x'
+
     # Build and pack
     - name: Build solution and generate NuGet package
       run: ./pack.sh
