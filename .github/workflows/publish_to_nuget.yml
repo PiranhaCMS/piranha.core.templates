@@ -28,7 +28,7 @@ jobs:
         nuget-version: '6.x'
 
     # Restore
-    - name: Clean solution
+    - name: Restore solution
       run: dotnet restore
 
     # Clean
