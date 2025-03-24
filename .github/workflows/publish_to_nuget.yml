@@ -27,9 +27,21 @@ jobs:
       with:
         nuget-version: '6.x'
 
-    # Build and pack
-    - name: Build solution and generate NuGet package
-      run: ./pack.sh
+    # Restore
+    - name: Clean solution
+      run: dotnet restore
+
+    # Clean
+    - name: Clean solution
+      run: dotnet clean
+
+    # Build
+    - name: Build solution
+      run: dotnet build -c Release
+
+    # Pack
+    - name: Generate NuGet package
+      run: nuget pack nuspec/Piranha.Templates.nuspec -OutputDirectory ./artifacts
 
     # Install SignClient
     - name: Install SignClient
