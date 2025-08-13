@@ -1,12 +1,13 @@
+@use "sass:color";
 .btn {
     &.btn-primary {
         background-color: #f94c3b;
         border-color: #f94c3b;
-        transition: all .2s ease-in-out;
+        transition: all 0.2s ease-in-out;
 
         &:hover {
-            background-color: darken(#f94c3b, 15%);
-            border-color: darken(#f94c3b, 15%);
+            background-color: color.scale(#f94c3b, $lightness: -15%);
+            border-color: color.scale(#f94c3b, $lightness: -15%);
         }
     }
 }

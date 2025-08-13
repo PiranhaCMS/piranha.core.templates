@@ -1,10 +1,11 @@
+@use "sass:color";
 .page-link {
     color: #f94c3b;
     min-width: 2.5rem;
     text-align: center;
 
     &:hover {
-        color: darken(#f94c3b, 10%);
+        color: color.scale(#f94c3b, $lightness: -10%);
     }
 }
 

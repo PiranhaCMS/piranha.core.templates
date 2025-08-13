@@ -1,3 +1,4 @@
+@use "sass:color";
 body {
     padding-top: 3.5rem;
 }
@@ -9,10 +10,10 @@ img {
 }
 a {
     color: #f94c3b;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
-        color: darken(#f94c3b, 10%);
+        color: color.scale(#f94c3b, $lightness: -10%);
     }
 }
 .container {
